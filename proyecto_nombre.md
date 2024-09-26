@@ -7,8 +7,9 @@
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
-- Benitez Gonzalo Ezequiel
-- Marcos Abel Marquez
+- Benitez, Gonzalo Ezequiel
+- Marquez, Marcos Abel
+- Risso, Santiago Francisco
 
 **Año**: 2024
 
