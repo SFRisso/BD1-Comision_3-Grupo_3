@@ -8,6 +8,7 @@
 
 **Integrantes**:
 - Benitez, Gonzalo Ezequiel
+- Centurión Esteban Agustín
 - Marquez, Marcos Abel
 - Risso, Santiago Francisco
 
