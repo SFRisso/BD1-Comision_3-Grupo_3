@@ -1,12 +1,8 @@
-# Bases de Datos I - Proyecto de Estudio
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
+# Bases de Datos I - Proyecto de Estudio - Comsión 3 - Grupo 3
 
+Documento principal: [proyecto_pasaje_avion](proyecto_pasaje_avion.md)
 
 # Proyecto de Estudio!
-
-Este espacio propone presentar la información para organizar el desarrollo del Proyecto de Estudio de la asignatura Bases de Datos I (FaCENA - UNNE)
-
-Este borrador fue elaborado usando https://stackedit.io/app#
 
 **Estructura inicial del proyecto en el repositorio**
 
@@ -21,4 +17,3 @@ Este borrador fue elaborado usando https://stackedit.io/app#
 	----> ...
     ->nombre_proyecto.md (documento principal estructurado por capítulos)
     
-**Estructura del documento principal:**
