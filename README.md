@@ -2,8 +2,6 @@
 
 Documento principal: [proyecto_pasaje_avion](proyecto_pasaje_avion.md)
 
-# Proyecto de Estudio!
-
 **Estructura inicial del proyecto en el repositorio**
 
     proyecto_estudio
