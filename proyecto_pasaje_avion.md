@@ -1,7 +1,3 @@
-# Proyecto de Estudio!
-    
-**Estructura del documento principal:**
-
 # PRESENTACIÓN (Título/Nombre Proyecto)
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
