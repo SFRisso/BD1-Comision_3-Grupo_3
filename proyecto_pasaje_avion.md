@@ -67,8 +67,8 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 
  **b) Herramientas (Instrumentos y procedimientos)**
-       erd.dbdesigner
-       SQL Server Management Studio
+       - [erd.dbdesigner](https://www.dbdesigner.net/)
+       - SQL Server Management Studio
       
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
@@ -83,9 +83,12 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 Acceso al documento [PDF](doc/diccionario_datos_pasajes_avion.pdf) del diccionario de datos.
 
-### Scrip del modelo de datos
+### Script del modelo de datos
 
 > Acceder a la siguiente carpeta  [scripts->script_ddl_pasajes_aviones.sql](script/script_ddl_pasajes_aviones.sql)
+
+### Script de lote de datos
+
 
 ### Desarrollo TEMA 1 "----"
 
