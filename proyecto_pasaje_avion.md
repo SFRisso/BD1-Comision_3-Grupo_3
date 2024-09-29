@@ -76,7 +76,7 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 ### Diagrama conceptual (opcional)
 
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasaje_aviones.jpeg)
+![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasajes-de-aviones.png)
 [Link a la pagina del diagrama](https://dbdesigner.page.link/zGxXPJzd4mikyFLP6)
 
 ### Diccionario de datos
