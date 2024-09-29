@@ -31,7 +31,7 @@ El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de
 
 ### Definición o planteamiento del problema
 
-El sistema busca optimizar la compra de pasajes, 
+El sistema busca optimizar la compra de pasajes, y mantener un registro detallado de los vuelos y pasajeros.
 
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
