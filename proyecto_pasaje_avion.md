@@ -14,7 +14,7 @@
 
 ### CAPÍTULO I: Descripción del Caso de Estudio y Alcance
 1.1 Descripción del Caso de Estudio
-El proyecto se centra en la creación de una plataforma para la gestión de reservas de pasajes de avión en un aeropuerto. El sistema permitirá a los usuarios buscar y reservar vuelos disponibles entre distintas ciudades. Los usuarios podrán registrarse, iniciar sesión, y acceder a una interfaz donde se muestran los detalles de cada vuelo, como la aerolínea, el precio, la fecha y hora de salida y llegada, y el estado del vuelo.
+El proyecto se centra en la creación de una plataforma para la gestión de reservas de pasajes de avión en un aeropuerto. El sistema permitirá reservar vuelos o un pasaje disponible entre distintas ciudades, los detalles de cada vuelo, como la aerolínea, el precio, la fecha y hora de salida y llegada.
 
 
 
