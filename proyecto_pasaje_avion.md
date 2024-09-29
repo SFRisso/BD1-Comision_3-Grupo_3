@@ -31,8 +31,16 @@ El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de
 
 ### Definición o planteamiento del problema
 
+
+### Objetivo del Proyecto
+
+1.1 Objetivos Generales.
+
 El sistema busca optimizar la compra de pasajes, y mantener un registro detallado de los vuelos y pasajeros.
 
+1.2 Objetivos Especificos.
+
+El sistema también ayuda a obtener una mayor disponibilidad 
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
