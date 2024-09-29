@@ -31,6 +31,8 @@ El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de
 
 ### Definición o planteamiento del problema
 
+El sistema se centra en la creación de una plataforma para la gestión de reservas de pasajes de avión para un determinado vuelo de un aeropuerto. 
+El sistema permitirá reservar vuelos para las distintas ciudades, haciendo más acccesible la compra para los pasajeros
 
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
