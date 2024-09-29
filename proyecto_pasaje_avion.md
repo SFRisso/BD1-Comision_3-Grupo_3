@@ -77,11 +77,12 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasaje_aviones.jpeg)
+<iframe width="100%" height="500px" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Embedded DB Designer IFrame" frameborder="0" src='https://erd.dbdesigner.net/designer/schema/1727543819-pasajes-de-aviones?embed=true'></iframe>
 ![heramienta de uso](https://erd.dbdesigner.net/designer/schema/1727543819-pasajes-de-aviones).
 
 ### Diccionario de datos
 
-Acceso al documento [PDF](doc/diccionario_datos.pdf) del diccionario de datos.
+Acceso al documento [PDF](doc/diccionario_datos_pasajes_avion.pdf) del diccionario de datos.
 
 
 ### Desarrollo TEMA 1 "----"
