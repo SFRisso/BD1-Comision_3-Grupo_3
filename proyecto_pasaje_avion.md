@@ -67,8 +67,8 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 
  **b) Herramientas (Instrumentos y procedimientos)**
-       - [erd.dbdesigner](https://www.dbdesigner.net/)
-       - SQL Server Management Studio
+ - [DB designer](https://www.dbdesigner.net/)
+ - SQL Server Management Studio
       
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
@@ -77,7 +77,7 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasaje_aviones.jpeg)
-![Link a la pagina del diagrama](https://dbdesigner.page.link/zGxXPJzd4mikyFLP6).
+[Link a la pagina del diagrama](https://dbdesigner.page.link/zGxXPJzd4mikyFLP6)
 
 ### Diccionario de datos
 
