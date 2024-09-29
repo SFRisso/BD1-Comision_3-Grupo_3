@@ -83,18 +83,17 @@ El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio
 
 Acceso al documento [PDF](doc/diccionario_datos_pasajes_avion.pdf) del diccionario de datos.
 
+### Scrip del modelo de datos
+
+> Acceder a la siguiente carpeta  [scripts->script_ddl_pasajes_aviones.sql](script/script_ddl_pasajes_aviones.sql)
 
 ### Desarrollo TEMA 1 "----"
 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
 
 ### Desarrollo TEMA 2 "----"
 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
-
-... 
 
 
 ## CAPÍTULO V: CONCLUSIONES
