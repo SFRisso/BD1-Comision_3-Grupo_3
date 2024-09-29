@@ -49,9 +49,10 @@ CREATE TABLE [Pasajero] (
 	[dni_pasajero] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
 	[apellido] nvarchar(100) NOT NULL,
-	[email] nvarchar(max) NOT NULL UNIQUE,
-	[telefono] nvarchar(max) NOT NULL,
-	CONSTRAINT PK_Pasajero PRIMARY KEY ([dni_pasajero])
+	[email] nvarchar(100) NOT NULL ,
+	[telefono] nvarchar(100) NOT NULL,
+	CONSTRAINT PK_Pasajero PRIMARY KEY ([dni_pasajero]),
+	CONSTRAINT UQ_Pasajero_Email UNIQUE ([email])
 );
 
 CREATE TABLE [Asiento] (
@@ -61,21 +62,25 @@ CREATE TABLE [Asiento] (
 	CONSTRAINT FK_Asiento_Categoria FOREIGN KEY ([id_categoria]) REFERENCES [Categoria]([id_categoria])
 );
 
-CREATE TABLE [Pasaje] (
-	[id_pasaje] int NOT NULL,
-	[costo_total] float(53) NOT NULL,
-	[peso_equipaje_extra] decimal(18,0),
-	[dni_pasajero] int NOT NULL,
-	PRIMARY KEY ([id_pasaje])
-);
-
 CREATE TABLE [Avion] (
 	[id_avion] int NOT NULL,
 	[modelo] nvarchar(100) NOT NULL,
 	[capcidad] int NOT NULL,
 	[id_aerolinea] int NOT NULL,
-	PRIMARY KEY ([id_avion])
+	CONSTRAINT PK_Avion PRIMARY KEY ([id_avion]),
+	CONSTRAINT FK_Avion_Aerolinea FOREIGN KEY ([id_aerolinea]) REFERENCES [Aerolinea]([id_aerolinea])
 );
+
+CREATE TABLE [Pasaje] (
+	[id_pasaje] int NOT NULL,
+	[costo_total] float(53) NOT NULL,
+	[peso_equipaje_extra] decimal(18,0),
+	[dni_pasajero] int NOT NULL,
+	CONSTRAINT PK_Pasaje PRIMARY KEY ([id_pasaje]),
+	CONSTRAINT FK_Pasaje_Pasajero FOREIGN KEY ([dni_pasajero]) REFERENCES [Pasajero]([dni_pasajero])
+);
+
+
 
 CREATE TABLE [Vuelo] (
 	[id_vuelo] int NOT NULL,
@@ -84,34 +89,18 @@ CREATE TABLE [Vuelo] (
 	[origen] int NOT NULL,
 	[destino] int NOT NULL,
 	[id_avion] int NOT NULL,
-	PRIMARY KEY ([id_vuelo])
+	CONSTRAINT PK_Vuelo PRIMARY KEY ([id_vuelo]),
+	CONSTRAINT FK_Vuelo_Aeropuerto_origen FOREIGN KEY ([origen]) REFERENCES [Aeropuerto]([cod_iata_aeropuerto]),
+	CONSTRAINT FK_Vuelo_Aeropuerto_destino FOREIGN KEY ([destino]) REFERENCES [Aeropuerto]([cod_iata_aeropuerto]),
+	CONSTRAINT FK_Vuelo_Avion FOREIGN KEY ([id_avion]) REFERENCES [Avion]([id_avion])
 );
 
 CREATE TABLE [Pasaje_Vuelo] (
 	[id_vuelo] int NOT NULL,
 	[id_pasaje] int NOT NULL,
 	[id_asiento] int NOT NULL,
-	PRIMARY KEY ([id_vuelo], [id_pasaje], [id_asiento])
+	CONSTRAINT PK_Pasaje_Vuelo PRIMARY KEY ([id_vuelo], [id_pasaje], [id_asiento]),
+	CONSTRAINT FK_Pasaje_Vuelo_Vuelo FOREIGN KEY ([id_vuelo]) REFERENCES [Vuelo]([id_vuelo]),
+	CONSTRAINT FK_Pasaje_Vuelo_Pasaje FOREIGN KEY ([id_pasaje]) REFERENCES [Pasaje]([id_pasaje]),
+	CONSTRAINT FK_Pasaje_Vuelo_Asiento FOREIGN KEY ([id_asiento]) REFERENCES [Asiento]([id_asiento]),
 );
-
-
-
-
-
-
-ALTER TABLE [Pasaje] ADD CONSTRAINT [Pasaje_fk3] FOREIGN KEY ([dni_pasajero]) REFERENCES [Pasajero]([dni_pasajero]);
-
-ALTER TABLE [Avion] ADD CONSTRAINT [Avion_fk3] FOREIGN KEY ([id_aerolinea]) REFERENCES [Aerolinea]([id_aerolinea]);
-ALTER TABLE [Vuelo] ADD CONSTRAINT [Vuelo_fk3] FOREIGN KEY ([origen]) REFERENCES [Aeropuerto]([cod_iata_aeropuerto]);
-
-ALTER TABLE [Vuelo] ADD CONSTRAINT [Vuelo_fk4] FOREIGN KEY ([destino]) REFERENCES [Aeropuerto]([cod_iata_aeropuerto]);
-
-ALTER TABLE [Vuelo] ADD CONSTRAINT [Vuelo_fk5] FOREIGN KEY ([id_avion]) REFERENCES [Avion]([id_avion]);
-ALTER TABLE [Pasaje_Vuelo] ADD CONSTRAINT [Pasaje_Vuelo_fk0] FOREIGN KEY ([id_vuelo]) REFERENCES [Vuelo]([id_vuelo]);
-
-ALTER TABLE [Pasaje_Vuelo] ADD CONSTRAINT [Pasaje_Vuelo_fk1] FOREIGN KEY ([id_pasaje]) REFERENCES [Pasaje]([id_pasaje]);
-
-ALTER TABLE [Pasaje_Vuelo] ADD CONSTRAINT [Pasaje_Vuelo_fk2] FOREIGN KEY ([id_asiento]) REFERENCES [Asiento]([id_asiento]);
-
-
-ALTER TABLE [Asiento] ADD 
