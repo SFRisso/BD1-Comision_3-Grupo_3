@@ -40,7 +40,7 @@ El sistema busca optimizar la compra de pasajes, y mantener un registro detallad
 
 1.2 Objetivos Especificos.
 
-El sistema también ayuda a obtener una mayor disponibilidad 
+El sistema también ayuda a obtener una mayor seguridad y calidad en el servicio a los futuros clientes.
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
