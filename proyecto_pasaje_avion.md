@@ -41,8 +41,9 @@ El proyecto se centra en la creación de una plataforma para la gestión de rese
 
 
  **b) Herramientas (Instrumentos y procedimientos)**
- 
-
+       erd.dbdesigner
+       SQL Server Management Studio
+      
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
