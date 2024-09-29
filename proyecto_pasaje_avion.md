@@ -14,7 +14,7 @@
 
 ### CAPÍTULO I: Descripción del Caso de Estudio y Alcance
 1.1 Descripción del Caso de Estudio.
-El proyecto se centra en la creación de una plataforma para la gestión de reservas de pasajes de avión en un aeropuerto. El sistema permitirá reservar vuelos o un pasaje disponible entre distintas ciudades, los detalles de cada vuelo, como la aerolínea, el precio, la fecha y hora de salida y llegada.
+El proyecto se centra, en la creación de un sistema para la gestión de reservas de pasajes de avión de un aeropuerto.
 
 1.2 Alcance.
 El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de vuelos:
@@ -31,8 +31,7 @@ El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de
 
 ### Definición o planteamiento del problema
 
-El sistema se centra en la creación de una plataforma para la gestión de reservas de pasajes de avión para un determinado vuelo de un aeropuerto. 
-El sistema permitirá reservar vuelos para las distintas ciudades, haciendo más acccesible la compra para los pasajeros
+El sistema busca optimizar la compra de pasajes, 
 
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
