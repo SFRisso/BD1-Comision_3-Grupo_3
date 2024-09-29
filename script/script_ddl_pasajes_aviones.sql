@@ -1,3 +1,4 @@
+-- DEFINNICIÓN DEL MODELO DE DATOS
 CREATE DATABASE Pasajes_Avion;
 
 USE Pasajes_Avion;
