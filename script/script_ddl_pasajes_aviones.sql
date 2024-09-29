@@ -74,7 +74,7 @@ CREATE TABLE [Avion] (
 CREATE TABLE [Pasaje] (
 	[id_pasaje] int NOT NULL,
 	[costo_total] float(53) NOT NULL,
-	[peso_equipaje_extra] decimal(18,0),
+	[peso_equipaje_extra] decimal(10,2),
 	[dni_pasajero] int NOT NULL,
 	CONSTRAINT PK_Pasaje PRIMARY KEY ([id_pasaje]),
 	CONSTRAINT FK_Pasaje_Pasajero FOREIGN KEY ([dni_pasajero]) REFERENCES [Pasajero]([dni_pasajero])
