@@ -63,6 +63,7 @@ El sistema busca optimizar la compra de pasajes, y mantener un registro detallad
 
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasaje_aviones.jpeg)
+![heramienta de uso](https://erd.dbdesigner.net/designer/schema/1727543819-pasajes-de-aviones).
 
 ### Diccionario de datos
 
