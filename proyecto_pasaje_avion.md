@@ -63,7 +63,7 @@ El sistema permitirá reservar vuelos para las distintas ciudades, haciendo más
 ### Diagrama conceptual (opcional)
 
 ### Diagrama relacional
-![diagrama_relacional](https://github.com/dovillegas/basesdatos_proyecto_estudio/blob/main/doc/image_relational.png)
+![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/Modelo%20Relacional%20Pasaje%20de%20Aviones.png)
 
 ### Diccionario de datos
 
