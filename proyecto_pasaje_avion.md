@@ -31,12 +31,13 @@ El alcance cubre los aspectos esenciales de un sistema de reservas de pasajes de
 
 ### Definición o planteamiento del problema
 
+ El proyecto plantea como caso de investigación la busqueda de, ¿Dónde y cómo son guardados los datos de los pasajeros y sus respectivos vuelos? 
 
 ### Objetivo del Proyecto
 
 1.1 Objetivos Generales.
 
-El sistema busca optimizar la compra de pasajes, y mantener un registro detallado de los vuelos y pasajeros.
+El sistema busca mantener un registro detallado de los vuelos y pasajeros, y optimizar la compra de pasajes.
 
 1.2 Objetivos Especificos.
 
