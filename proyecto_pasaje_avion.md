@@ -1,4 +1,4 @@
-# PRESENTACIÓN - Reserva de pasajes de aviones
+# PRESENTACIÓN - Reserva de pasajes aereos
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
