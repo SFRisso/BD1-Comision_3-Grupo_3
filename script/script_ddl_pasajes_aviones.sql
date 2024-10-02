@@ -58,6 +58,7 @@ CREATE TABLE [Pasajero] (
 
 CREATE TABLE [Asiento] (
 	[id_asiento] int NOT NULL,
+	[nro_asiento] int NOT NULL,
 	[id_categoria] int NOT NULL,
 	CONSTRAINT PK_Asiento PRIMARY KEY ([id_asiento]),
 	CONSTRAINT FK_Asiento_Categoria FOREIGN KEY ([id_categoria]) REFERENCES [Categoria]([id_categoria])
