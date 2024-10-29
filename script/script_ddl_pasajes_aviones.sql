@@ -1,14 +1,17 @@
 -- DEFINNICIÓN DEL MODELO DE DATOS
 CREATE DATABASE Pasajes_Avion;
-
+GO
+	
 USE Pasajes_Avion;
-
+GO
+	
 CREATE TABLE [Pais] (
 	[id_pais] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
 	PRIMARY KEY ([id_pais])
 );
-
+GO
+	
 CREATE TABLE [Provincia] (
 	[id_provincia] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
@@ -16,7 +19,8 @@ CREATE TABLE [Provincia] (
 	CONSTRAINT PK_Provincia PRIMARY KEY ([id_provincia]),
 	CONSTRAINT FK_Provincia_Pais FOREIGN KEY ([id_pais]) REFERENCES [Pais]([id_pais])
 );
-
+GO
+	
 CREATE TABLE [Ciudad] (
 	[id_ciudad] int NOT NULL,
 	[nombre] nvarchar(80) NOT NULL,
@@ -24,7 +28,8 @@ CREATE TABLE [Ciudad] (
 	CONSTRAINT PK_Ciudad PRIMARY KEY ([id_ciudad]),
 	CONSTRAINT FK_Ciudad_Provincia FOREIGN KEY ([id_provincia]) REFERENCES [Provincia]([id_provincia])
 );
-
+GO
+	
 CREATE TABLE [Aeropuerto] (
 	[cod_iata_aeropuerto] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
@@ -32,20 +37,23 @@ CREATE TABLE [Aeropuerto] (
 	CONSTRAINT PK_Aeropuerto PRIMARY KEY ([cod_iata_aeropuerto]),
 	CONSTRAINT FK_Aeropuerto_Ciudad FOREIGN KEY ([id_ciudad]) REFERENCES [Ciudad]([id_ciudad])
 );
-
+GO
+	
 CREATE TABLE [Aerolinea] (
 	[id_aerolinea] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
 	CONSTRAINT PK_Aerolinea PRIMARY KEY ([id_aerolinea])
 );
-
+GO
+	
 CREATE TABLE [Categoria] (
 	[id_categoria] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
 	[tarifa] float(53) NOT NULL,
 	CONSTRAINT PK_Categoria PRIMARY KEY ([id_categoria])
 );
-
+GO
+	
 CREATE TABLE [Pasajero] (
 	[dni_pasajero] int NOT NULL,
 	[nombre] nvarchar(100) NOT NULL,
@@ -55,7 +63,8 @@ CREATE TABLE [Pasajero] (
 	CONSTRAINT PK_Pasajero PRIMARY KEY ([dni_pasajero]),
 	CONSTRAINT UQ_Pasajero_Email UNIQUE ([email])
 );
-
+GO
+	
 CREATE TABLE [Asiento] (
 	[id_asiento] int NOT NULL,
 	[nro_asiento] int NOT NULL,
@@ -63,7 +72,8 @@ CREATE TABLE [Asiento] (
 	CONSTRAINT PK_Asiento PRIMARY KEY ([id_asiento]),
 	CONSTRAINT FK_Asiento_Categoria FOREIGN KEY ([id_categoria]) REFERENCES [Categoria]([id_categoria])
 );
-
+GO
+	
 CREATE TABLE [Avion] (
 	[id_avion] int NOT NULL,
 	[modelo] nvarchar(100) NOT NULL,
@@ -72,7 +82,8 @@ CREATE TABLE [Avion] (
 	CONSTRAINT PK_Avion PRIMARY KEY ([id_avion]),
 	CONSTRAINT FK_Avion_Aerolinea FOREIGN KEY ([id_aerolinea]) REFERENCES [Aerolinea]([id_aerolinea])
 );
-
+GO
+	
 CREATE TABLE [Pasaje] (
 	[id_pasaje] int NOT NULL,
 	[costo_total] float(53) NOT NULL,
@@ -81,9 +92,8 @@ CREATE TABLE [Pasaje] (
 	CONSTRAINT PK_Pasaje PRIMARY KEY ([id_pasaje]),
 	CONSTRAINT FK_Pasaje_Pasajero FOREIGN KEY ([dni_pasajero]) REFERENCES [Pasajero]([dni_pasajero])
 );
-
-
-
+GO
+	
 CREATE TABLE [Vuelo] (
 	[id_vuelo] int NOT NULL,
 	[fecha_salida] datetime NOT NULL,
@@ -96,7 +106,8 @@ CREATE TABLE [Vuelo] (
 	CONSTRAINT FK_Vuelo_Aeropuerto_destino FOREIGN KEY ([destino]) REFERENCES [Aeropuerto]([cod_iata_aeropuerto]),
 	CONSTRAINT FK_Vuelo_Avion FOREIGN KEY ([id_avion]) REFERENCES [Avion]([id_avion])
 );
-
+GO
+	
 CREATE TABLE [Pasaje_Vuelo] (
 	[id_vuelo] int NOT NULL,
 	[id_pasaje] int NOT NULL,
@@ -106,3 +117,4 @@ CREATE TABLE [Pasaje_Vuelo] (
 	CONSTRAINT FK_Pasaje_Vuelo_Pasaje FOREIGN KEY ([id_pasaje]) REFERENCES [Pasaje]([id_pasaje]),
 	CONSTRAINT FK_Pasaje_Vuelo_Asiento FOREIGN KEY ([id_asiento]) REFERENCES [Asiento]([id_asiento]),
 );
+GO
