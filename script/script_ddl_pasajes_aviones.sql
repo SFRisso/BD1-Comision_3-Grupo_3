@@ -67,7 +67,7 @@ CREATE TABLE [Asiento] (
 CREATE TABLE [Avion] (
 	[id_avion] int NOT NULL,
 	[modelo] nvarchar(100) NOT NULL,
-	[capcidad] int NOT NULL,
+	[capacidad] int NOT NULL,
 	[id_aerolinea] int NOT NULL,
 	CONSTRAINT PK_Avion PRIMARY KEY ([id_avion]),
 	CONSTRAINT FK_Avion_Aerolinea FOREIGN KEY ([id_aerolinea]) REFERENCES [Aerolinea]([id_aerolinea])
