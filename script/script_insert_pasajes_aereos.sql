@@ -1,7 +1,7 @@
 -- SCRIPT "Reserva de pasajes aéreos"
 -- INSERCIÓN DEL LOTE DE DATOS
 
-USE Pasajes_Avion;
+USE Pasajes_Aereos;
 GO
 
 --Aerolineas
