@@ -4,9 +4,9 @@
 
 **Integrantes**:
 - Benitez, Gonzalo Ezequiel 
-- Centurión, Esteban Agustín @estebancent
-- Marquez, Marcos Abel @abelm18
-- Risso, Santiago Francisco @SFRisso
+- Centurión, Esteban Agustín 
+- Marquez, Marcos Abel 
+- Risso, Santiago Francisco
   
 **Año**: 2024
 
