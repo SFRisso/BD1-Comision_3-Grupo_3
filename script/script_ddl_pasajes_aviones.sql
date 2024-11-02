@@ -15,9 +15,9 @@ GO
 
 -- Tabla Provincia
 CREATE TABLE [Provincia] (
-    [id_pais] int NOT NULL,
-    [id_provincia] int NOT NULL,
-    [nombre] nvarchar(100) NOT NULL,
+    [id_pais] INT NOT NULL,
+    [id_provincia] INT NOT NULL,
+    [nombre] NVARCHAR(100) NOT NULL,
     CONSTRAINT PK_Provincia PRIMARY KEY ([id_pais], [id_provincia]),
     CONSTRAINT FK_Provincia_Pais FOREIGN KEY ([id_pais]) REFERENCES [Pais]([id_pais])
 );
@@ -25,10 +25,10 @@ GO
 
 -- Tabla Ciudad
 CREATE TABLE [Ciudad] (
-    [id_pais] int NOT NULL,
-    [id_provincia] int NOT NULL,
-    [id_ciudad] int NOT NULL,
-    [nombre] nvarchar(80) NOT NULL,
+    [id_pais] INT NOT NULL,
+    [id_provincia] INT NOT NULL,
+    [id_ciudad] INT NOT NULL,
+    [nombre] NVARCHAR(100) NOT NULL,
     CONSTRAINT PK_Ciudad PRIMARY KEY ([id_pais], [id_provincia], [id_ciudad]),
     CONSTRAINT FK_Ciudad_Provincia FOREIGN KEY ([id_pais], [id_provincia]) REFERENCES [Provincia]([id_pais], [id_provincia])
 );
@@ -37,10 +37,10 @@ GO
 -- Tabla Aeropuerto
 CREATE TABLE [Aeropuerto] (
     [cod_iata_aeropuerto] CHAR(3) NOT NULL,
-    [nombre] nvarchar(100) NOT NULL,
-    [id_pais] int NOT NULL,
-    [id_provincia] int NOT NULL,
-    [id_ciudad] int NOT NULL,
+    [nombre] NVARCHAR(100) NOT NULL,
+    [id_pais] INT NOT NULL,
+    [id_provincia] INT NOT NULL,
+    [id_ciudad] INT NOT NULL,
     CONSTRAINT PK_Aeropuerto PRIMARY KEY ([cod_iata_aeropuerto]),
     CONSTRAINT FK_Aeropuerto_Ciudad FOREIGN KEY ([id_pais], [id_provincia], [id_ciudad]) REFERENCES [Ciudad]([id_pais], [id_provincia], [id_ciudad])
 );
