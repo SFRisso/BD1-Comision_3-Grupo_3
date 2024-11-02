@@ -93,11 +93,11 @@ CREATE TABLE [Pasajero] (
     [dni_pasajero] INT NOT NULL,
     [nombre] NVARCHAR(100) NOT NULL,
     [apellido] NVARCHAR(100) NOT NULL,
-    [email] NVARCHAR(100) NOT NULL,
-    [telefono] NVARCHAR(100) NOT NULL,
+    [email] NVARCHAR(100),
+    [telefono] NVARCHAR(100),
     CONSTRAINT PK_Pasajero PRIMARY KEY ([dni_pasajero]),
     CONSTRAINT UQ_Pasajero_email UNIQUE ([email]), -- validacion de email unico
-	CONSTRAINT CK_dni_pasajero CHECK ([dni_pasajero] BETWEEN 1 AND 99999999)
+    CONSTRAINT CK_dni_pasajero CHECK ([dni_pasajero] BETWEEN 1 AND 99999999) --dni mayor a 0 y hasta 8 digitos
 );
 GO
 
