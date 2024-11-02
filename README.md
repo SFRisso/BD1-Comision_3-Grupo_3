@@ -1,6 +1,6 @@
 # Bases de Datos I - Proyecto de Estudio - Comsión 3 - Grupo 3
 
-Documento principal: [proyecto_pasaje_avion](proyecto_pasaje_avion.md)
+Documento principal: [proyecto_pasajes_aereos](proyecto_pasajes_aereos.md)
 
 **Estructura inicial del proyecto en el repositorio**
 
