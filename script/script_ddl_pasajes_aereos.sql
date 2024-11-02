@@ -1,8 +1,8 @@
 -- DEFINICIÓN DEL MODELO DE DATOS
-CREATE DATABASE Pasajes_Avion;
+CREATE DATABASE Pasajes_Aereos;
 GO
 
-USE Pasajes_Avion;
+USE Pasajes_Aereos;
 GO
 
 -- Tabla Pais
