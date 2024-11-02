@@ -9,7 +9,7 @@ GO
 CREATE TABLE [Pais] (
     [id_pais] INT NOT NULL,
     [nombre] NVARCHAR(100) NOT NULL,
-    CONSTRAINT PL_Pais PRIMARY KEY ([id_pais])
+    CONSTRAINT PK_Pais PRIMARY KEY ([id_pais])
 );
 GO
 
