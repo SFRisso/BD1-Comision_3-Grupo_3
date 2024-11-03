@@ -138,7 +138,7 @@ Ventajas de las funciones almacenadas:
 ## Diagrama conceptual (opcional)
 
 ## Diagrama relacional
-![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasajes-de-aviones.png)
+![diagrama_relacional](https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/doc/modelo_relacional_pasajes%20de%20aviones.JPG)
 [Link a la pagina del diagrama](https://dbdesigner.page.link/zGxXPJzd4mikyFLP6)
 
 ## Diccionario de datos
