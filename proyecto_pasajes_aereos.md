@@ -138,7 +138,7 @@ Ventajas de las funciones almacenadas:
 ## Diagrama conceptual (opcional)
 
 ## Diagrama relacional
-![diagrama_relacional](doc\modelo_relacional_pasajes_aereos.png)
+![diagrama_relacional](doc/modelo_relacional_pasajes_aereos.png)
 [Link a la pagina del diagrama](https://dbdesigner.page.link/zGxXPJzd4mikyFLP6)
 
 ## Diccionario de datos
