@@ -119,6 +119,17 @@ Ventajas de las funciones almacenadas:
 
 **TEMA 3 - Optimización de consultas a través de índices**
 
+<ins>Optimización de consultas: <ins>
+
+La optimización de consultas a través de indices, es una herremienta muy conveniente usarlo a la hora de buscar una mejora notable en el tiempo de respuesta y, la recuperación de información de una base de datos. 
+Pero para ello, los administradores de base de datos debemos tener un buen conocimiento de la estructura de ejecución de las consultas y cuándo es eficiente usar índices, ya que, pueden mejorar el rendimiento de las 
+cláusulas SELECT, como también hacer más lentas las sentencias DML como INSERT,UPDATE,y DELETE.
+
+Tipos de índices:
+En la optimización de consultas, contamos con dos principales tipos de índices, los cuales son los índices agrupados y no agrupados.
+- Índices Agrupados: Son usados para almacenar las filas de información clasificadas basado en los valores clave. SQL Server nos permite crear un único índice por cada tabla.
+- -Índices No Agrupados:
+
 **TEMA 4 - Vistas y vistas indexadas** 
 
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
