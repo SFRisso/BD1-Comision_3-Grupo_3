@@ -183,17 +183,17 @@ En la optimización de consultas, contamos con dos principales tipos de índices
 Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del diccionario de datos.
 
 ## Script del modelo de datos
-> Acceder a la siguiente carpeta  [scripts->script_ddl_pasajes_aviones.sql](script/script_ddl_pasajes_aviones.sql)
+> Acceder a la siguiente carpeta  [scripts->script_ddl_pasajes_aereos.sql](script/script_ddl_pasajes_aereos.sql)
 
 ## Script de lote de datos
-> Acceder a la siguiente carpeta  [scripts->script_insert_pasajes_aviones.sql](script/script_insert_pasajes_aviones.sql)
+> Acceder a la siguiente carpeta  [scripts->script_insert_pasajes_aereos.sql](script/script_insert_pasajes_aereos.sql)
 
 ## Desarrollo TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos
 
 ## Desarrollo TEMA 2 - Procedimientos y funciones almacenadas
-> Documentación del script: [procedimientos_funciones_almacenadas.md](script/tema02_procedimientos_funciones_almacenadas/procedimientos_funciones_almacenadas.md)
+> Documentación del script: [procedimientos_funciones_almacenadas.md](script/tema02_procedimientos_funciones/procedimientos_funciones.md)
 
-> Script: [tema02_script.sql](script/tema02_procedimientos_funciones_almacenadas/tema02_script.sql)
+> Script: [tema02_script.sql](script/tema02_procedimientos_funciones/tema02_script.sql)
 
 ## Desarrollo TEMA 3 - Optimización de consultas a través de índices
 
