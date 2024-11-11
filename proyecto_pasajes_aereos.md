@@ -87,7 +87,7 @@ En el contexto actual, donde el tráfico aéreo sigue en aumento y los usuarios 
 
 # CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-**TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos** 
+## TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos 
 
 El manejo de permisos a nivel de usuarios en bases de datos es una práctica fundamental en la administración de sistemas de información, ya que permite controlar el acceso y las acciones que cada usuario puede realizar sobre los datos. En sistemas de bases de datos relacionales (RDBMS), como Microsoft SQL Server, existen herramientas específicas para definir roles y permisos. Este tema es clave para garantizar la seguridad, confidencialidad y eficiencia en la operación de la base de datos, particularmente en entornos que requieren un control estricto de la información sensible.
 
@@ -114,7 +114,7 @@ Pruebas de restricciones: Asegurarse de que usuarios sin permisos específicos r
  Conclusiones
 El manejo de permisos es esencial para el funcionamiento seguro y ordenado de cualquier base de datos. Implementar y documentar adecuadamente los permisos garantiza que los datos están protegidos, se reduce la exposición a riesgos y se asegura que los usuarios trabajen dentro de un marco de acceso controlado. Esta práctica es indispensable en cualquier sistema que requiera precisión, privacidad y cumplimiento de regulaciones de seguridad de la información.
 
-**TEMA 2 - Procedimientos y funciones almacenadas** 
+## TEMA 2 - Procedimientos y funciones almacenadas** 
 
 <ins>Procedimientos Almacenados: <ins>
 
@@ -146,7 +146,7 @@ Ventajas de las funciones almacenadas:
 | Puede llamar al otro         | Puede llamar a una función                             | No puede llamar a un procedimiento|
 | Propósito	                   | Lógica compleja y modificaciones de datos              | Cálculos y transformaciones      |
 
-**TEMA 3 - Optimización de consultas a través de índices**
+## TEMA 3 - Optimización de consultas a través de índices**
 
 <ins>Optimización de consultas: <ins>
 
@@ -159,7 +159,7 @@ En la optimización de consultas, contamos con dos principales tipos de índices
 - Índices Agrupados: Son usados para almacenar las filas de información clasificadas basado en los valores clave. SQL Server nos permite crear un único índice por cada tabla.
 - -Índices No Agrupados:
 
-**TEMA 4 - Vistas y vistas indexadas** 
+## TEMA 4 - Vistas y vistas indexadas** 
 
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
