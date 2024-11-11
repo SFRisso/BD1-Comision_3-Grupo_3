@@ -154,10 +154,23 @@ La optimización de consultas a través de indices, es una herremienta muy conve
 Pero para ello, los administradores de base de datos debemos tener un buen conocimiento de la estructura de ejecución de las consultas y cuándo es eficiente usar índices, ya que, pueden mejorar el rendimiento de las 
 cláusulas SELECT, como también hacer más lentas las sentencias DML como INSERT,UPDATE,y DELETE.
 
-Tipos de índices:
-En la optimización de consultas, contamos con dos principales tipos de índices, los cuales son los índices agrupados y no agrupados.
+<ins>Tipos de índices: <ins>
+
+Existen varios tipos de índices que pueden ser utilizadas en función de nuestra necesidades, por ello nombraremos algunos de los índices que son mayormente usados.
+
+- Índices Unicos: Creados para asegurar que nos existen valores duplicados y para mantener la integridad de la información de las columnas.
 - Índices Agrupados: Son usados para almacenar las filas de información clasificadas basado en los valores clave. SQL Server nos permite crear un único índice por cada tabla.
-- -Índices No Agrupados:
+- Índices No Agrupados: Utilizados para mejorar las consultas que son frecuentemente usadas, que no son cubiertas con los índces agrupados. Y a su vez, nos ayudan a mejorar el rendimiento del sistema.
+- Índices Simples: Son creados sobre una sola columna, y nos permite acelarar la busqueda en base a esa columna especifica.
+- Índices Complejos: Pueden ser creados en 2 o más columnas, son utiles para realizar búsquedasmás complejas que involucran varias condiciones en diferentes columnas.
+
+ <ins>Beneficios de usar Índices: <ins>
+
+  - Mejora el rendimiento de las consultas, especialmente en tablas que tienen un gran volumen de datos.
+  - Reduce el tiempo de ejecución de las consultas.
+  - Aceleran la búsqueda de los registros.
+  - Acceden a los datos de una manera más optima.
+  - Mejora la experencia de los usuarios
 
 ## TEMA 4 - Vistas y vistas indexadas
 
