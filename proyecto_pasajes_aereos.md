@@ -209,7 +209,7 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Script: [tema02_script.sql](script/tema02_procedimientos_funciones/tema02_script.sql)
 
 ## Desarrollo TEMA 3 - Optimización de consultas a través de índices
-> Carga de 1 millón de registro: [1millon_de_pasajeros.sql]
+> Carga de 1 millón de registro: [1millon_de_pasajeros.sql](script/tema03_indices/1millon_de_pasajeros.sql)
 
 ## Desarrollo TEMA 4 - Vistas y vistas indexadas
 
