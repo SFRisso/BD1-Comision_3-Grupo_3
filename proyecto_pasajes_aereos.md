@@ -69,52 +69,56 @@ En el contexto actual, donde el tráfico aéreo sigue en aumento y los usuarios 
 - DNI de pasajero debe ser un numero de 8 digitos como maximo.
 
 <ins> Manejo de permisos a nivel de usuarios de base de datos: <ins>
+- Entender el manejo de permisos y roles en bases de datos.
+- Aplicar permisos de lectura, escritura y ejecución para diferentes roles y usuarios.
 
 <ins> Procedimientos y funciones almacenadas: <ins>
+- Comprender la diferencia entre procedimientos y funciones almacenadas.
+- Aplicar procedimientos y funciones en la implementación de operaciones CRUD.
 
 <ins> Optimización de consultas a través de índices: <ins>
+- Conocer los tipos de índices y sus aplicaciones.
+- Evaluar el impacto de los índices en el rendimiento de las consultas.
 
 <ins>Vistas y Vistas indexadas: <ins>
+- Comprender el uso de vistas y vistas indexadas para mejorar la gestión y consulta de datos.
+- Evaluar el impacto de las vistas indexadas en el rendimiento de las consultas.
 
 
 # CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
 **TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos** 
 
-
-
 **TEMA 2 - Procedimientos y funciones almacenadas** 
 
-<ins>Procedimientos alamcenados: <ins>
+<ins>Procedimientos Almacenados: <ins>
 
-Los procedimientos almacenados son conjuntos de instrucciones SQL predefinidas que se guardan en la base de datos y se pueden ejecutar de manera recurrente. Funcionan como "programas" que encapsulan una serie de operaciones, como consultas, actualizaciones y lógicas complejas, y pueden recibir parámetros para personalizar su ejecución.
+Son conjuntos de instrucciones SQL que se guardan en la base de datos para ejecutar operaciones repetitivas (consultas, actualizaciones) y pueden recibir parámetros. Los procedimientos pueden ser definidos por el usuario, temporales o del sistema.
 
 Ventajas de los procedimientos almacenados:
-- Mejora del rendimiento: Al estar precompilados, los procedimientos almacenados se ejecutan más rápido que consultas individuales, ya que SQL Server almacena el plan de ejecución.
-- Reutilización y modularidad: Facilitan la reutilización de código, ya que pueden ser llamados desde múltiples aplicaciones o partes de un sistema sin necesidad de escribir las mismas instrucciones.
-- Seguridad: Permiten controlar el acceso a los datos de manera granular. Los permisos de acceso pueden ser asignados al procedimiento en lugar de a las tablas subyacentes.
-- Mantenimiento simplificado: Al centralizar la lógica de negocio en procedimientos almacenados, cualquier cambio solo necesita realizarse en un lugar, simplificando el mantenimiento y las actualizaciones.
-- Reducción del tráfico en la red: Como el cliente solo envía el llamado al procedimiento en lugar de una consulta extensa, se reduce la cantidad de datos que viajan entre el cliente y el servidor.
+- Rendimiento: Precompilados, se ejecutan más rápido, ya que SQL Server almacena el plan de ejecución.
+- Reutilización y Mantenimiento: Código reutilizable en diferentes aplicaciones, cualquier cambio solo necesita realizarse en un lugar.
+- Seguridad: Los permisos de acceso pueden ser asignados al procedimiento en lugar de a las tablas subyacentes.
+- Reducción de tráfico de red: Se envía solo la llamada al procedimiento en lugar de una consulta extensa, se reduce la cantidad de datos que viajan entre el cliente y el servidor.
 
-<ins>Funciones Almacenadas:	<ins>
+<ins>Funciones Almacenadas: <ins>
 
-Las funciones almacenadas son bloques de código SQL que realizan una operación específica y devuelven un valor. A diferencia de los procedimientos almacenados, las funciones están diseñadas para ser usadas dentro de consultas, como en cláusulas SELECT, WHERE, o JOIN, ya que siempre devuelven un valor (escalar, tabla o conjunto de valores).
+Bloques de código SQL que realizan una operación específica y devuelven un valor, diseñados para usarse en consultas (SELECT, WHERE, JOIN). Las funciones pueden ser definidas por el usuario o del sistema. Segun su retorno pueden ser funciones escalares (devuelve un valor unico) o funciones con valores de tabla (devuelve una tabla).
 
 Ventajas de las funciones almacenadas:
-- Reutilización de código: Las funciones encapsulan lógicas y cálculos comunes que pueden ser reutilizados en múltiples consultas o procedimientos, evitando duplicar el código.
-- Facilidad de uso en consultas: Las funciones pueden ser invocadas dentro de consultas, permitiendo operaciones complejas en SELECT, WHERE, JOIN, y otras cláusulas de forma sencilla.
-- Modularidad y mantenimiento: Facilitan el mantenimiento, ya que cualquier cambio en la lógica solo se hace en la función, y todas las consultas que la usan se actualizan automáticamente.
-- Claridad y organización: Ayudan a organizar la lógica en piezas más manejables y específicas, haciendo el código SQL más legible y estructurado.
-- Mejora de rendimiento: Al estar precompiladas, algunas funciones pueden ejecutar operaciones complejas de forma más rápida, especialmente las funciones escalar o de tabla en línea, que optimizan las consultas.
+- Rendimiento: Precompilados, se ejecutan más rápido, ya que SQL Server almacena el plan de ejecución.
+- Reutilización y Mantenimiento: Código reutilizable en diferentes aplicaciones, cualquier cambio solo necesita realizarse en un lugar.
+- Reducción de tráfico de red: Operaciones complejas en SELECT, WHERE, JOIN.
 
 <ins>Diferencias:	<ins>
 
 | Característica               | Procedimientos Almacenados                             | Funciones Almacenadas            |
 |   :---:                      |     :---:                                              |       :---:                      |
-| Retorno                      | Opcional, mediante `SELECT` o parámetros de salida     | Obligatorio, valor único o tabla |
-| Llamado en consultas `SELECT`| No                                                     | Sí                               | 
+| Retorno                      | Opcional, uno o mós                                    | Obligatorio, valor único o tabla |                     
+| Puede usarse en `SELECT`     | No                                                     | Sí                               | 
 | Modificación de datos        | Sí (`INSERT`, `UPDATE`, `DELETE`)                      | No                               |
 | Transacciones                | Sí                                                     | No                               |
+| Puede llamar al otro         | Puede llamar a una función                             | No puede llamar a un procedimiento|
 | Propósito	                   | Lógica compleja y modificaciones de datos              | Cálculos y transformaciones      |
 
 **TEMA 3 - Optimización de consultas a través de índices**
@@ -134,19 +138,16 @@ En la optimización de consultas, contamos con dos principales tipos de índices
 
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
-
-
  **a) Cómo se realizó el Trabajo Práctico**
 
 
  **b) Herramientas (Instrumentos y procedimientos)**
  - [DB designer](https://www.dbdesigner.net/)
- - SQL Server Management Studio
-      
+ - [SQL SERVER EXPRESS 22](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+ - [SQL Server Management Studio (SSMS) 20.2](https://learn.microsoft.com/es-es/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+
 
 # CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
-
-## Diagrama conceptual (opcional)
 
 ## Diagrama relacional
 ![diagrama_relacional](doc/modelo_relacional_pasajes_aereos.png)
@@ -162,21 +163,23 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 ## Script de lote de datos
 > Acceder a la siguiente carpeta  [scripts->script_insert_pasajes_aviones.sql](script/script_insert_pasajes_aviones.sql)
 
-## Desarrollo TEMA 1 "----"
+## Desarrollo TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos
 
+## Desarrollo TEMA 2 - Procedimientos y funciones almacenadas
+> Documentación del script: [procedimientos_funciones_almacenadas.md](script/tema02_procedimientos_funciones_almacenadas/procedimientos_funciones_almacenadas.md)
 
+> Script: [tema02_script.sql](script/tema02_procedimientos_funciones_almacenadas/tema02_script.sql)
 
-## Desarrollo TEMA 2 "----"
+## Desarrollo TEMA 3 - Optimización de consultas a través de índices
 
-
-
+## Desarrollo TEMA 4 - Vistas y vistas indexadas
 
 # CAPÍTULO V: CONCLUSIONES
 
 
 # BIBLIOGRAFÍA DE CONSULTA
 
- 1. List item
+ 1. [Documentación técnica oficial de SQL Server](https://learn.microsoft.com/es-es/sql/sql-server/?view=sql-server-ver16)
  2. List item
  3. List item
  4. List item
