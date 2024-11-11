@@ -88,6 +88,7 @@ En el contexto actual, donde el tráfico aéreo sigue en aumento y los usuarios 
 # CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
 **TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos** 
+
 El manejo de permisos a nivel de usuarios en bases de datos es una práctica fundamental en la administración de sistemas de información, ya que permite controlar el acceso y las acciones que cada usuario puede realizar sobre los datos. En sistemas de bases de datos relacionales (RDBMS), como Microsoft SQL Server, existen herramientas específicas para definir roles y permisos. Este tema es clave para garantizar la seguridad, confidencialidad y eficiencia en la operación de la base de datos, particularmente en entornos que requieren un control estricto de la información sensible.
 
  Objetivo del Manejo de Permisos
