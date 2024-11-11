@@ -90,12 +90,14 @@ GO
 
 --Tabla Pasajero
 CREATE TABLE [Pasajero] (
+    [id_pasajero] INT NOT NULL,
     [dni_pasajero] INT NOT NULL,
     [nombre] NVARCHAR(100) NOT NULL,
     [apellido] NVARCHAR(100) NOT NULL,
     [email] NVARCHAR(100) NOT NULL,
     [telefono] NVARCHAR(100),
-    CONSTRAINT PK_Pasajero PRIMARY KEY ([dni_pasajero]),
+    [fechanac] DATE NOT NULL,
+    CONSTRAINT PK_Pasajero PRIMARY KEY ([id_pasajero]),
     CONSTRAINT UQ_Pasajero_email UNIQUE ([email]), -- validacion de email unico
     CONSTRAINT CK_dni_pasajero CHECK ([dni_pasajero] BETWEEN 1 AND 99999999) --dni mayor a 0 y hasta 8 digitos
 );
@@ -105,9 +107,9 @@ GO
 CREATE TABLE [Pasaje] (
     [id_pasaje] INT NOT NULL,
     [peso_equipaje_extra] DECIMAL(10, 2),
-    [dni_pasajero] INT NOT NULL,
+    [id_pasajero] INT NOT NULL,
     CONSTRAINT PK_Pasaje PRIMARY KEY ([id_pasaje]),
-    CONSTRAINT FK_Pasaje_Pasajero FOREIGN KEY ([dni_pasajero]) REFERENCES [Pasajero]([dni_pasajero]),
+    CONSTRAINT FK_Pasaje_Pasajero FOREIGN KEY ([id_pasajero]) REFERENCES [Pasajero]([id_pasajero]),
     CONSTRAINT CK_Pasaje_peso_equipaje_extra CHECK ([peso_equipaje_extra] >= 0)  -- Validación de peso positivo
 );
 GO

@@ -180,12 +180,12 @@ WHERE p.apellido LIKE @apellido
 );
 GO
 
-SELECT * 
-FROM dbo.ApellidoPasajero('Aguirre')
+SELECT *
+FROM dbo.ApellidoPasajero( 'Aguirre' )
 GO
 
 SELECT *
-FROM dbo.ApellidoPasajero( 'rojas' ) 
+FROM dbo.ApellidoPasajero( 'rojas' )
 GO
 
 --Funcion
@@ -210,18 +210,18 @@ SELECT *
 FROM pasaje
 WHERE CASE
 			   WHEN @PesoEquipajeExtra=0
-			   THEN 1 
+			   THEN 1
 			   WHEN @PesoEquipajeExtra IS NULL
-			   THEN 1 
+			   THEN 1
 			   WHEN peso_equipaje_extra>=@PesoEquipajeExtra
-			   THEN 1 
+			   THEN 1
 			   ELSE 0
 	  END=1
 );
 GO
 
 SELECT *
-FROM dbo.PasajesPorPesoExtra(null) AS pasajeros
+FROM dbo.PasajesPorPesoExtra( NULL ) AS pasajeros
 ORDER BY pasajeros.peso_equipaje_extra
 GO
 
