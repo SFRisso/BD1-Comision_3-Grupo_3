@@ -1,3 +1,5 @@
+use Pasajes_Aereos;
+
 -- Start by disabling constraints temporarily if allowed
 ALTER TABLE [Pasajero] NOCHECK CONSTRAINT ALL;
 
