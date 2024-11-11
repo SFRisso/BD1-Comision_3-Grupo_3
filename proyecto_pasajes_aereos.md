@@ -88,6 +88,30 @@ En el contexto actual, donde el tráfico aéreo sigue en aumento y los usuarios 
 # CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
 **TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos** 
+El manejo de permisos a nivel de usuarios en bases de datos es una práctica fundamental en la administración de sistemas de información, ya que permite controlar el acceso y las acciones que cada usuario puede realizar sobre los datos. En sistemas de bases de datos relacionales (RDBMS), como Microsoft SQL Server, existen herramientas específicas para definir roles y permisos. Este tema es clave para garantizar la seguridad, confidencialidad y eficiencia en la operación de la base de datos, particularmente en entornos que requieren un control estricto de la información sensible.
+
+ Objetivo del Manejo de Permisos
+El manejo de permisos permite definir los derechos de acceso que cada usuario o grupo de usuarios tiene sobre la base de datos. Los permisos son reglas que controlan las acciones, tales como lectura, escritura y ejecución de comandos específicos. La asignación adecuada de permisos asegura que cada usuario pueda acceder únicamente a los datos y funciones necesarias para su rol, minimizando el riesgo de errores accidentales y de accesos no autorizados.
+
+ Roles y Usuarios en Bases de Datos
+En un sistema de base de datos, un rol es un conjunto de permisos que puede ser asignado a múltiples usuarios. Esto simplifica la administración de permisos, permitiendo que usuarios con roles similares (como “lectores” o “administradores”) compartan permisos comunes. En contraste, un usuario es una cuenta específica creada en la base de datos que puede tener permisos individuales o pertenecer a uno o varios roles.
+
+Roles de lectura (solo lectura) permiten ver los datos sin realizar modificaciones.
+Roles de escritura permiten modificar datos, por ejemplo, insertando o actualizando registros.
+Roles de ejecución autorizan la ejecución de procedimientos almacenados y otras operaciones.
+ Implementación de Permisos
+Los permisos pueden asignarse tanto a nivel de usuarios individuales como de roles. Esto se realiza mediante comandos de control de acceso como GRANT y REVOKE. En la práctica, los permisos a nivel de usuarios se utilizan para otorgar acceso a un usuario específico, mientras que los permisos a nivel de roles son útiles para implementar políticas de acceso a nivel grupal.
+
+En el escenario donde se gestiona la reserva de pasajes aéreos, un administrador de base de datos podría:
+Crear un rol RolSoloLectura que permita a los usuarios visualizar la información en tablas sensibles, como las de Pasaje y Pasajero, sin poder modificarlas.
+Asignar a los usuarios en roles específicos para asegurar que solo ciertos usuarios puedan ejecutar procedimientos almacenados que alteran los datos, mientras que otros solo pueden visualizar información.
+ Pruebas y Evaluación de Permisos
+Una buena práctica en la administración de permisos incluye pruebas regulares para verificar que los usuarios solo pueden acceder a las áreas que les corresponden. Esto implica:
+
+Verificación de acceso: Probar que los usuarios con permisos de solo lectura pueden realizar consultas SELECT pero no pueden modificar datos.
+Pruebas de restricciones: Asegurarse de que usuarios sin permisos específicos reciban mensajes de error cuando intentan acceder a datos o realizar operaciones restringidas.
+ Conclusiones
+El manejo de permisos es esencial para el funcionamiento seguro y ordenado de cualquier base de datos. Implementar y documentar adecuadamente los permisos garantiza que los datos están protegidos, se reduce la exposición a riesgos y se asegura que los usuarios trabajen dentro de un marco de acceso controlado. Esta práctica es indispensable en cualquier sistema que requiera precisión, privacidad y cumplimiento de regulaciones de seguridad de la información.
 
 **TEMA 2 - Procedimientos y funciones almacenadas** 
 
