@@ -246,6 +246,12 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 
 # CAPÍTULO V: CONCLUSIONES
 
+Tema 3: Optimización de consultas a través de índices
+
+La implementación de índices, tanto agrupados como no agrupados, nos muestra que es una estrategia muy buena para mejora en el rendimiento de las consultas con grandes volúmenes de datos.
+
+Las pruebas indican una la reducción en el tiempo de ejecución y en las lecturas lógicas considerable, lo que resulta en una mejora en la eficiencia general del sistema. 
+Por lo tanto, es muy recomendable el uso de índices en bases de datos, para optimizar el acceso a los datos y mejorar la experiencia del usuario en aplicaciones que dependen de consultas rápidas.
 
 # BIBLIOGRAFÍA DE CONSULTA
 
