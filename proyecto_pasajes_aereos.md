@@ -173,6 +173,37 @@ Existen varios tipos de índices que pueden ser utilizadas en función de nuestr
   - Mejora la experencia de los usuarios
 
 ## TEMA 4 - Vistas y vistas indexadas
+En SQL Server, una vista es un objeto de base de datos que representa un conjunto de datos que resulta de una consulta SQL almacenada. Las vistas actúan como una "ventana" que permite ver datos de una o más tablas sin tener que acceder directamente a ellas. Son particularmente útiles para:
+  1.	Simplificar Consultas Complejas: Una vista puede almacenar consultas complejas, facilitando su reutilización y evitando que los usuarios tengan que escribirlas repetidamente.
+  2.	Seguridad: Permiten limitar el acceso a ciertos datos sin exponer las tablas originales. Los usuarios pueden tener permisos para acceder a la vista, pero no necesariamente a las tablas subyacentes.
+  3.	Mantenimiento de Datos: Al modificar una vista, los datos subyacentes pueden permanecer consistentes. Esto es útil si la estructura de las tablas cambia, ya que solo es necesario actualizar la vista, sin afectar las consultas de los usuarios.
+  4.	Abstracción y Conveniencia: Al encapsular lógica compleja en una vista, se puede trabajar con datos de varias tablas como si fueran una sola entidad.
+
+Ejemplo de Creación de Vista.
+  create view VistaPasajerosActivos 
+  select nombre, apellido, fecha_nacimiento, nuevo_pasaporte
+  from Pasajero
+  where estado = 'Activo';
+En este ejemplo, muestra solo los pasajeros activos, seleccionando ciertas columnas de la tabla pasajero.
+
+Vistas indexadas.
+Ofrecen un rendimiento de lecturas mejorado al hacer uso del índice para leer los datos y no tener que ejecutar la consulta. Sin embargo, nos pueden llegar a penalizar considerablemente las operaciones de escritura al añadir no sólo otro índice donde escribir los datos sino complejidad a ese índice. Adicionalmente podremos crear tantos índices nonclustered sobre la vista como necesitemos. Al igual que ocurre con los índices de las tablas en nuestra mano queda medir el coste/beneficio y valorar su idoneidad.
+Con las vistas indexadas notaremos una mejora en el rendimiento de nuestras consultas si las aplicamos sobre entornos con una gran diferencia de lecturas frente a escrituras, sobre todo entornos Data Warehouse, bases de datos OLAP o entornos de minería de datos. Rara vez serán recomendables en entornos con alta carga de transacciones IUD (insert, update y delete) en bases de datos OLTP.
+
+Limitaciones.
+Uno de los inconvenientes de las vistas indexadas es que la degradación en rendimiento de las escrituras es mayor que la mejora en las lecturas, esto nos limita en gran medida su uso. Sin embargo no es su única limitación, la verdad es que tienen una amplia lista de incompatibilidades y requisitos. Uno de los principales requisitos de las vistas indexadas es que hay que crearlas con la opción SCHEMABINDING esto implica que no se podrán modificar las tablas referenciadas.
+Además de tener que crear la vista como SCHEMABINDING tenemos que tener en cuenta otros aspectos importantes:
+  •	Las vistas indexadas no admiten expresiones no deterministas. Es decir, las expresiones de la vista siempre deben devolver el mismo resultado no como GETDATE() que nos devolvería un valor distinto en cada ejecución.
+  •	Las tablas y funciones dentro de la vista deben declararse con el nombre completo (esquema.tabla).
+  •	No se admiten subconsultas.
+  •	No se admiten OUTER JOINS, esto deja fuera RIGHT JOIN y LEFT JOIN.
+  •	El índice clustered de nuestra vista ocupará espacio en disco.
+  •	Solo se puede hacer referencia a tablas de la misma base de datos.
+  •	Si tenemos GROUP BY, la definición de la vista debe contener COUNT_BIG(*), pero no HAVING.
+  •	No se puede usar EXISTS, NOT EXISTS, COUNT(*), MIN, MAX, hints de tablas, TOP ni UNION.
+  •	No puede utilizar los tipos de datos text,  ntext ,  image o  XML. El tipo de datos float se puede utilizar en la vista, pero no en el índice agrupado.
+  
+
 
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
