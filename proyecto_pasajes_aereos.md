@@ -111,6 +111,7 @@ Una buena práctica en la administración de permisos incluye pruebas regulares 
 
 Verificación de acceso: Probar que los usuarios con permisos de solo lectura pueden realizar consultas SELECT pero no pueden modificar datos.
 Pruebas de restricciones: Asegurarse de que usuarios sin permisos específicos reciban mensajes de error cuando intentan acceder a datos o realizar operaciones restringidas.
+
  Conclusiones
 El manejo de permisos es esencial para el funcionamiento seguro y ordenado de cualquier base de datos. Implementar y documentar adecuadamente los permisos garantiza que los datos están protegidos, se reduce la exposición a riesgos y se asegura que los usuarios trabajen dentro de un marco de acceso controlado. Esta práctica es indispensable en cualquier sistema que requiera precisión, privacidad y cumplimiento de regulaciones de seguridad de la información.
 
