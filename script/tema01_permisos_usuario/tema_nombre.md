@@ -65,4 +65,79 @@ Este script define un procedimiento almacenado para insertar registros en la tab
        VALUES (@id_pasaje, @peso_equipaje_extra, @id_pasajero);
    END;
    GO
+2. Pruebas de Inserción
+a. Inserción Directa como usuarioAdminDB
+Cambia el contexto a usuarioAdminDB e intenta una inserción directa en la tabla Pasaje, que debería ser exitosa.
+En caso de error, se captura y muestra un mensaje.
 
+EXECUTE AS USER = 'usuarioAdminDB';
+BEGIN TRY
+    INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
+    VALUES (44, 5.00, 29);
+    PRINT 'Inserción en Pasaje realizada exitosamente.';
+END TRY
+BEGIN CATCH
+    PRINT 'Error al intentar insertar en Pasaje: ' + ERROR_MESSAGE();
+END CATCH;
+REVERT;
+
+b. Inserción Directa como usuarioLecturaDB
+Cambia el contexto a usuarioLecturaDB, quien tiene permisos de solo lectura. La inserción directa debería fallar debido a la falta de permisos de escritura, mostrando un mensaje de error.
+
+EXECUTE AS USER = 'usuarioLecturaDB';
+BEGIN TRY
+    INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
+    VALUES (3, 8.00, 64);
+END TRY
+BEGIN CATCH
+    PRINT 'Error: El "usuario de solo lectura" No tiene permisos para insertar directamente en la tabla Pasaje';
+END CATCH;
+REVERT;
+
+c. Inserción a Través del Procedimiento con Permisos
+Se otorga a usuarioLecturaDB el permiso de ejecutar el procedimiento InsertarPasaje.
+Luego, se ejecuta el procedimiento como usuarioLecturaDB para insertar datos en Pasaje, lo cual debería ser exitoso.
+
+GRANT EXECUTE ON InsertarPasaje TO usuarioLecturaDB;
+GO
+BEGIN TRY
+    EXECUTE AS USER = 'usuarioLecturaDB';
+    EXEC InsertarPasaje @id_pasaje = 154, @peso_equipaje_extra = 7.00, @id_pasajero = 111;
+    PRINT 'UsuarioLectura inserta a travez de un Procedimiento: Inserción en Pasaje realizada exitosamente.';
+    REVERT;
+END TRY
+BEGIN CATCH
+    PRINT 'Error: No se pudo realizar la inserción en Pasaje.';
+    PRINT 'Detalles del error: ' + ERROR_MESSAGE();
+    REVERT;
+END CATCH;
+GO
+
+3. Consulta de Datos como usuarioLecturaDB
+Como usuario con permisos de solo lectura (db_datareader), usuarioLecturaDB realiza una consulta SELECT en la tabla Pasajero, lo cual debe ser exitoso.
+
+EXECUTE AS USER = 'usuarioLecturaDB';
+BEGIN TRY
+    SELECT * FROM Pasajero;
+    PRINT 'Usuario Lectura: Consulta "Pasajeros" ejecutada exitosamente.';
+END TRY
+BEGIN CATCH
+    PRINT 'Error al ejecutar la consulta: ' + ERROR_MESSAGE();
+END CATCH;
+REVERT;
+GO
+4. Intento de Inserción por un Usuario sin Permisos (usuarioSinPermisosDB)
+usuarioSinPermisosDB intenta realizar una inserción directa en la tabla Pasaje, lo cual debe fallar ya que no tiene permisos de escritura en la base de datos.
+
+EXECUTE AS USER = 'usuarioSinPermisosDB';
+BEGIN TRY
+    INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
+    VALUES (104, 6.00, 93); 
+END TRY
+BEGIN CATCH
+    PRINT 'Error: Usuario sin permiso no puede realizar INSERT en la tabla Pasaje';
+END CATCH;
+REVERT;
+
+Conclusión
+Este script demuestra cómo configurar permisos de manera diferenciada en SQL Server y validar su efecto. El usuario usuarioAdminDB puede realizar inserciones directas, usuarioLecturaDB puede realizar inserciones solo a través del procedimiento InsertarPasaje, y usuarioSinPermisosDB no puede realizar inserciones. Esto ilustra el control de acceso granular a nivel de usuarios y roles en SQL Server.
