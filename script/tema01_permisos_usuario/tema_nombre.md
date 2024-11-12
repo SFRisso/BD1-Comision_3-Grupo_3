@@ -39,3 +39,30 @@ Al finalizar el script, se imprime un mensaje de confirmación indicando que la 
 - **Usuarios sin permisos**: La creación de usuarios sin permisos específicos es útil para limitar el acceso según las necesidades de seguridad de la aplicación.
 
 La configuración del esquema de seguridad en la base de datos `Pasajes_Aereos`, asegura que cada usuario tenga los permisos necesarios para realizar sus tareas asignadas.
+
+# Script SQL para la Creación y Prueba de Permisos en un Procedimiento Almacenado
+
+Este script define un procedimiento almacenado para insertar registros en la tabla `Pasaje`, configura permisos para distintos usuarios y verifica el comportamiento de dichos permisos.
+
+## Descripción del Script
+
+1. **Crear el Procedimiento Almacenado**
+   - El procedimiento almacenado `InsertarPasaje` se crea para insertar datos en la tabla `Pasaje`.
+   - Si el procedimiento ya existe, se elimina antes de volver a crearlo.
+
+   ```sql
+   IF OBJECT_ID('InsertarPasaje', 'P') IS NOT NULL
+       DROP PROCEDURE InsertarPasaje;
+   GO
+
+   CREATE PROCEDURE InsertarPasaje
+       @id_pasaje INT,
+       @peso_equipaje_extra DECIMAL(10, 2),
+       @id_pasajero INT
+   AS
+   BEGIN
+       INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
+       VALUES (@id_pasaje, @peso_equipaje_extra, @id_pasajero);
+   END;
+   GO
+
