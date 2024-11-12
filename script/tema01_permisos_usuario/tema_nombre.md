@@ -65,11 +65,12 @@ Este script define un procedimiento almacenado para insertar registros en la tab
        VALUES (@id_pasaje, @peso_equipaje_extra, @id_pasajero);
    END;
    GO
-2. Pruebas de Inserción
+2. **Pruebas de Inserción**
 a. Inserción Directa como usuarioAdminDB
 Cambia el contexto a usuarioAdminDB e intenta una inserción directa en la tabla Pasaje, que debería ser exitosa.
 En caso de error, se captura y muestra un mensaje.
 
+ ```sql
 EXECUTE AS USER = 'usuarioAdminDB';
 BEGIN TRY
     INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
@@ -80,10 +81,12 @@ BEGIN CATCH
     PRINT 'Error al intentar insertar en Pasaje: ' + ERROR_MESSAGE();
 END CATCH;
 REVERT;
+GO
 
-b. Inserción Directa como usuarioLecturaDB
+b.**Inserción Directa como usuarioLecturaDB**
 Cambia el contexto a usuarioLecturaDB, quien tiene permisos de solo lectura. La inserción directa debería fallar debido a la falta de permisos de escritura, mostrando un mensaje de error.
 
+ ```sql
 EXECUTE AS USER = 'usuarioLecturaDB';
 BEGIN TRY
     INSERT INTO Pasaje (id_pasaje, peso_equipaje_extra, id_pasajero)
