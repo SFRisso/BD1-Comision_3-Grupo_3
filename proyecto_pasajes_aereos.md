@@ -236,7 +236,7 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Carga de 1 millón de registro: [1millon_de_pasajeros.sql](script/tema03_indices/1millon_de_pasajeros.sql)
 
 ## Desarrollo TEMA 4 - Vistas y vistas indexadas
-
+> Script []
 # CAPÍTULO V: CONCLUSIONES
 
 Tema 3: Optimización de consultas a través de índices
