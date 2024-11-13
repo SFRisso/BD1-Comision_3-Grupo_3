@@ -172,7 +172,7 @@ Existen varios tipos de índices que pueden ser utilizadas en función de nuestr
   - Reduce el tiempo de ejecución de las consultas.
   - Aceleran la búsqueda de los registros.
   - Acceden a los datos de una manera más optima.
-  - Mejora la experencia de los usuarios
+  - Mejora la experiencia de los usuarios
 
 ## TEMA 4 - Vistas y vistas indexadas
 
