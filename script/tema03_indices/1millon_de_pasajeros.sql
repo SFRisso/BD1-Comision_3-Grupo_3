@@ -107,6 +107,12 @@ ORDER BY fechanac ASC;
 
 /*	Resultados de la revision del plan de ejecución y el tiempo de respuesta
 
+(200013 rows affected)
+Table 'Pasajero'. Scan count 1, logical reads 3402, physical reads 0, page server reads 0, read-ahead reads 4, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 234 ms,  elapsed time = 2856 ms.
+
 */
 
 SET STATISTICS TIME OFF;
@@ -145,7 +151,12 @@ FROM [pasajero]
 WHERE fechanac BETWEEN '2000-01-01' AND '2009-12-31'
 ORDER BY fechanac ASC;
 /*	Resultados de la revision del plan de ejecución y el tiempo de respuesta
+(200013 rows affected)
+Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Pasajero'. Scan count 5, logical reads 16952, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
 
+ SQL Server Execution Times:
+   CPU time = 359 ms,  elapsed time = 2215 ms.
 */
 
 SET STATISTICS TIME OFF;
