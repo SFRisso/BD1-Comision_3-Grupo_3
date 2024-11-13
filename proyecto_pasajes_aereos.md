@@ -258,7 +258,7 @@ Por lo tanto, es muy recomendable el uso de índices en bases de datos, para opt
 # BIBLIOGRAFÍA DE CONSULTA
 
  1. [Documentación técnica oficial de SQL Server](https://learn.microsoft.com/es-es/sql/sql-server/?view=sql-server-ver16)
- 2. Libro super 
+ 2. List Item
  3. List item
  4. List item
  5. List item
