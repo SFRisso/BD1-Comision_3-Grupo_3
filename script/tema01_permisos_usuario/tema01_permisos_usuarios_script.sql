@@ -4,7 +4,7 @@ GO
 --  Crear los logins para los usuarios en el servidor, si no existen
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioAdmin')
 BEGIN
-    CREATE LOGIN usuarioAdmin WITH PASSWORD = 'PasswordAdmin123!';
+    CREATE LOGIN usuarioAdmin WITH PASSWORD = 'grupo3Admin123!';
     PRINT 'Login "usuarioAdmin" creado exitosamente.';
 END
 ELSE
@@ -12,7 +12,7 @@ ELSE
 
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioLectura')
 BEGIN
-    CREATE LOGIN usuarioLectura WITH PASSWORD = 'PasswordLectura123!';
+    CREATE LOGIN usuarioLectura WITH PASSWORD = 'grupo3Lectura123!';
     PRINT 'Login "usuarioLectura" creado exitosamente.';
 END
 ELSE
@@ -20,7 +20,7 @@ ELSE
 
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioSinPermisoLogin')
 BEGIN
-    CREATE LOGIN usuarioSinPermisoLogin WITH PASSWORD = 'PasswordSinPermiso123!';
+    CREATE LOGIN usuarioSinPermisoLogin WITH PASSWORD = 'grupo3SinPermiso123!';
     PRINT 'Login "usuarioSinPermisoLogin" creado exitosamente.';
 END
 ELSE
