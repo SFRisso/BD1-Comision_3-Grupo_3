@@ -152,7 +152,7 @@ Ventajas de las funciones almacenadas:
 
 <ins>Optimización de consultas: <ins>
 
-La optimización de consultas a través de índices, es una herramienta muy conveniente usarlo a la hora de buscar una mejora notable en el tiempo de respuesta y, la recuperación de información de una base de datos. 
+La optimización de consultas a través de índices, es una herramienta muy utilizada a la hora de buscar una mejora notable en el tiempo de respuesta y, la recuperación de información de una base de datos. 
 Pero para ello, los administradores de base de datos debemos tener un buen conocimiento de la estructura de ejecución de las consultas y cuándo es eficiente usar índices, ya que, pueden mejorar el rendimiento de las 
 cláusulas SELECT, como también hacer más lentas las sentencias DML como INSERT,UPDATE,y DELETE.
 
