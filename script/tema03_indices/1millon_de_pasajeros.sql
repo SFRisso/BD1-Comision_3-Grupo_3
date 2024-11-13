@@ -161,3 +161,28 @@ Table 'Pasajero'. Scan count 5, logical reads 16952, physical reads 0, page serv
 
 SET STATISTICS TIME OFF;
 SET STATISTICS IO OFF;
+
+------------------------------ Conclusiones ------------------------------
+
+/*	En base a los resultados obtenidos nos dimos cuenta que la creación de un índice agrupado en la columna 
+`Fecha_nacimiento` redujo significativamente el número de lecturas lógicas necesarias entre la primer consulta
+y la consulta realizada con el índice creado pasando de, "logical reads 16408" para la primer consulta a 
+"logical reads 3402" para la consulta con el índice creado. También se pudo observar una mejora en los recuentos 
+de escaneos, pasando de "Scan count 5" para la primer consulta, a "Scan count 1", para la consulta con el índice creado,
+lo que sugiere que la consulta fue más eficiente y aprovechó mejor la estructura de los datos.
+Por otro lado la inclusión de otras columnas en un índice agrupado adicional, si bien no redujo drásticamente pasando 
+de "logical reads 16408" para la primer consulta a "logical reads 16952" para la consulta con inclusión de otras 
+columnas, y obtenendo una igual en la cantidad de escaneos, lo que nos da como resultado que la consulta, optimizó 
+el acceso a los datos que se estaban buscando, reduciendo un poco las lecturas lógicas adicionales.
+
+Además se observó una mejora en el tiempo de CPU, comparando la primer consulta con un tiempo de "CPU time = 546 ms" y 
+un tiempo de "elapsed time = 2229 ms", pasando a un tiempo de "CPU time = 234 ms" y "elapsed time = 2856 ms" para la 
+consulta con un índice creado, y finalmente la última consulta con la inclusión de otras columnas, obteniendo un tiempo
+de "CPU time = 359 ms" y "elapsed time = 2215 ms".
+
+Asi que en base a las respuestas obtenidas, podemos concluir que el uso de índices agrupados puede reducir de manera 
+significativa la cantidad de lecturas necesarias y optimizar el tiempo de respuesta de las consultas, 
+especialmente en columnas que se utilizan frecuentemente  en las cláusulas `WHERE`.
+Sin embargo, la elección de las columnas para un índice debe ser cuidadosa, ya que la inclusión de 
+múltiples columnas puede no siempre traducirse en mejoras adicionales sustanciales.
+*/
