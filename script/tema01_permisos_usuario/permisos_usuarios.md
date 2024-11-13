@@ -86,7 +86,7 @@ REVERT;
 GO
 ```
 
-b.**Inserción Directa como usuarioLecturaDB**
+b.Inserción Directa como usuarioLecturaDB
 Cambia el contexto a usuarioLecturaDB, quien tiene permisos de solo lectura. La inserción directa debería fallar debido a la falta de permisos de escritura, mostrando un mensaje de error.
 
  ```
@@ -119,7 +119,7 @@ BEGIN CATCH
 END CATCH;
 GO
 ```
-3. Consulta de Datos como usuarioLecturaDB
+3. **Consulta de Datos como usuarioLecturaDB**
 Como usuario con permisos de solo lectura (db_datareader), usuarioLecturaDB realiza una consulta SELECT en la tabla Pasajero, lo cual debe ser exitoso.
 ```
 EXECUTE AS USER = 'usuarioLecturaDB';
@@ -133,7 +133,7 @@ END CATCH;
 REVERT;
 GO
 ```
-4. Intento de Inserción por un Usuario sin Permisos (usuarioSinPermisosDB)
+4. **Intento de Inserción por un Usuario sin Permisos (usuarioSinPermisosDB)**
 usuarioSinPermisosDB intenta realizar una inserción directa en la tabla Pasaje, lo cual debe fallar ya que no tiene permisos de escritura en la base de datos.
 ```
 EXECUTE AS USER = 'usuarioSinPermisosDB';
@@ -161,7 +161,7 @@ Este script configura usuarios y roles en la base de datos `Pasajes_Aereos`, def
    ```sql
    USE Pasajes_Aereos;
    GO
-Creación de Logins en el Servidor
+###Creación de Logins en el Servidor
 Si no existen, se crean dos logins a nivel de servidor:
 
 usuarioLecturaLogin: un login para el usuario con permisos de solo lectura.
@@ -173,7 +173,7 @@ IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioLecturaL
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioSinAccesoLogin')
     CREATE LOGIN usuarioSinAccesoLogin WITH PASSWORD = 'PasswordSinAcceso123!';
 ```
-Creación de Usuarios en la Base de Datos
+###Creación de Usuarios en la Base de Datos
 Se crean usuarios de base de datos asociados a los logins creados previamente:
 
 usuarioLectura: usuario con permisos de lectura.
@@ -185,26 +185,26 @@ IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'usuarioLectur
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'usuarioSinAcceso')
     CREATE USER usuarioSinAcceso FOR LOGIN usuarioSinAccesoLogin;
 ```
-Creación de un Rol de Solo Lectura
+###Creación de un Rol de Solo Lectura
 Si no existe, se crea un rol llamado RolSoloLectura, diseñado para otorgar permisos de lectura en la tabla Pasajero.
 
 ```
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'RolSoloLectura')
     CREATE ROLE RolSoloLectura;
 ```
-Otorgar Permiso de Lectura al Rol
+###Otorgar Permiso de Lectura al Rol
 Se concede al rol RolSoloLectura el permiso SELECT sobre la tabla Pasajero.
 
 ```
 GRANT SELECT ON Pasajero TO RolSoloLectura;
 ```
-Asignación del Usuario al Rol de Solo Lectura
+###Asignación del Usuario al Rol de Solo Lectura
 El usuario usuarioLectura se agrega como miembro del rol RolSoloLectura, lo que le permite realizar consultas en la tabla Pasajero.
 
 ```
 ALTER ROLE RolSoloLectura ADD MEMBER usuarioLectura;
 ```
-Pruebas de Acceso
+###Pruebas de Acceso
 
 Prueba de Consulta con usuarioLectura
 Se prueba el acceso a la tabla Pasajero con el usuario usuarioLectura, que tiene el rol RolSoloLectura. Si la consulta es exitosa, se imprime un mensaje indicando que el usuario pudo realizar la consulta. Si ocurre un error, se imprime un mensaje de error.
