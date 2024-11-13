@@ -194,6 +194,8 @@ Restricciones de uso: deben tener un índice único, solo permiten índices no c
   
 # CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
+**a) Cómo se realizó el Trabajo Práctico**
+
 Para iniciar el desarrollo del proyecto, en primer lugar, se organiza una reunión entre los integrantes del grupo para definir el caso de estudio que abordaríamos a lo largo del trabajo. Una vez establecida la idea central para la primera parte de la entrega, se creó un repositorio en GitHub, donde cada miembro del equipo podría ir subiendo sus aportes conforme a desarrollara las actividades asignadas.
 
 Con la idea definida, comenzamos por elaborar el diagrama entidad-relación y su diccionario de datos para, posteriormente, avanzar con el modelo físico y el lote de datos con los que trabajaríamos.
