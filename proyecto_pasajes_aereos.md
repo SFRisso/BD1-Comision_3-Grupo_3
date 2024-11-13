@@ -245,17 +245,23 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Documentación: [vistas_vistas_indexadas](script/tema04_vistas_y_vistas_indexadas/vistas_vistas_indexadas.md).
 
 # CAPÍTULO V: CONCLUSIONES
-Tema 1: Manejo de permisos a nivel de usuarios de base de datos.
-el manejo adecuado de permisos a nivel de usuarios en bases de datos es un pilar fundamental para garantizar la seguridad, integridad y eficiencia en el acceso y manipulación de los datos. La correcta asignación de permisos, el uso de roles y la implementación de procedimientos almacenados controlados son estrategias eficaces para mantener un entorno de base de datos seguro y bien administrado.
+**Tema 1: Manejo de permisos a nivel de usuarios de base de datos.**
 
-Tema 3: Optimización de consultas a través de índices
+El manejo adecuado de permisos a nivel de usuarios en bases de datos es un pilar fundamental para garantizar la seguridad, integridad y eficiencia en el acceso y manipulación de los datos. La correcta asignación de permisos, el uso de roles y la implementación de procedimientos almacenados controlados son estrategias eficaces para mantener un entorno de base de datos seguro y bien administrado.
+
+**Tema 2: Procedimientos y funciones almacenadas.**
+
+Los procedimientos almacenados son ideales para operaciones complejas y modificaciones de datos, permitiendo una gestión eficiente y segura de procesos de negocio gracias a su capacidad de ejecutar múltiples operaciones, controlar transacciones y reducir tráfico de red. Las funciones almacenadas, en cambio, son más adecuadas para cálculos y transformaciones reutilizables dentro de consultas, ya que su diseño se centra en devolver valores o conjuntos de resultados sin modificar datos. Ambas ofrecen beneficios de rendimiento, reutilización y mantenimiento, cada una optimizada para distintos usos: procedimientos para flujos transaccionales y funciones para lógica en consultas.
+
+**Tema 3: Optimización de consultas a través de índices.**
 
 La implementación de índices, tanto agrupados como no agrupados, nos muestra que es una estrategia muy buena para mejora en el rendimiento de las consultas con grandes volúmenes de datos.
 
 Las pruebas indican una la reducción en el tiempo de ejecución y en las lecturas lógicas considerable, lo que resulta en una mejora en la eficiencia general del sistema. 
 Por lo tanto, es muy recomendable el uso de índices en bases de datos, para optimizar el acceso a los datos y mejorar la experiencia del usuario en aplicaciones que dependen de consultas rápidas.
 
-Tema 4: Vistas y Vistas indexadas.
+**Tema 4: Vistas y Vistas indexadas.**
+
 Las vistas suelen usarse para centrar, simplificar y personalizar la percepción de la base de datos para cada usuario, es decir, pueden emplearse como mecanismos de seguridad, que permiten a los usuarios obtener acceso a los datos por medio de la vista, pero no les conceden el permiso de obtener acceso directo a las tablas subyacentes de la consulta. Tambien se utilizan para proporcionar una interfaz compatible con versiones anteriores con el fin de emular una tabla que existía pero cuyo esquema ha cambiado.
 
 Las vistas indexadas son una increíble herramienta en entornos o tablas con gran cantidad de lectura y pocas modificaciones pero si no es así nos pueden hacer mucho daño al servidor. Su uso puede ser una buena técnica para mejorar el rendimiento de las consultas al reducir el costo de E/S y la duración de las consultas, pero requiere pruebas, planificación y un estudio pormenorizado de donde usar vistas indexadas. Para ello se debe realizar un análisis completo del impacto en el rendimiento, midiendo las mejoras en el rendimiento de lecturas frente al coste en las escrituras
@@ -263,8 +269,4 @@ Las vistas indexadas son una increíble herramienta en entornos o tablas con gra
 # BIBLIOGRAFÍA DE CONSULTA
 
  1. [Documentación técnica oficial de SQL Server](https://learn.microsoft.com/es-es/sql/sql-server/?view=sql-server-ver16)
- 2. List Item
- 3. List item
- 4. List item
- 5. List item
 

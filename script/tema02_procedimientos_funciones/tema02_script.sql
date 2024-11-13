@@ -83,12 +83,13 @@ VALUES(27, 'Qantas');
 INSERT INTO Aerolinea(id_aerolinea, nombre)
 VALUES(28, 'KLM Royal Dutch Airlines');
 
-SELECT 
+SELECT id_aerolinea,
+	   nombre
 FROM Aerolinea
 
 --Con EXCE InsertIntoAerolinea en la tabla Aerolinea
 EXEC InsertIntoAerolinea
-	 @Id=29,
+	 @Id=98,
 	 @nombre='American Airlines';
 EXEC InsertIntoAerolinea
 	 @Id=30,
@@ -193,12 +194,12 @@ GO
 -- =============================================
 -- Nombre de Funcion: PasajesPorPesoExtra
 -- Descripción: 
---    Busca los pasajes que tengan un peso de equipaje extra mayor o igual
+--    Busca los pasajes que tengan un peso de equipaje mayor o igual
 --    al parametro @PesoEquipajeExtra. Acepta valores null.
 -- Parametros:
 --    @PesoEquipajeExtra DECIMAL(10, 2) NULL - peso del equipaje extra
 -- Retorno:
---    Pasajes cuyo equipaje extra es mayor o igual al parametro @PesoEquipajeExtra
+--    Pasajes cuyo equipaje extra es mayor o igual al parametro @PesoEquipajeExtra y nombre completo del pasajero.
 -- =============================================
 CREATE FUNCTION PasajesPorPesoExtra
 (
@@ -208,13 +209,19 @@ RETURNS TABLE
 AS
 RETURN
 (
-SELECT *
-FROM pasaje
+SELECT psj.id_pasaje,
+	   CONCAT( p.apellido, ', ', p.nombre ) AS 'Pasajero',
+	   psj.peso_equipaje_extra
+FROM pasaje psj
+INNER JOIN Pasajero p
+	ON psj.id_pasajero=p.id_pasajero
 WHERE CASE
 			   WHEN @PesoEquipajeExtra=0
 			   THEN 1
 			   WHEN @PesoEquipajeExtra IS NULL
 			   THEN 1
+			   WHEN @PesoEquipajeExtra<0
+			   THEN 0
 			   WHEN peso_equipaje_extra>=@PesoEquipajeExtra
 			   THEN 1
 			   ELSE 0
@@ -223,26 +230,84 @@ WHERE CASE
 GO
 
 SELECT *
-FROM dbo.PasajesPorPesoExtra( NULL ) AS pasajeros
+FROM dbo.PasajesPorPesoExtra( NULL ) AS psj
+ORDER BY psj.peso_equipaje_extra
+GO
+
+SELECT *
+FROM dbo.PasajesPorPesoExtra( -1 ) AS pasajeros
 ORDER BY pasajeros.peso_equipaje_extra
 GO
 
 SELECT *
-FROM dbo.PasajesPorPesoExtra( 0 ) AS pasajeros
-ORDER BY pasajeros.peso_equipaje_extra
-GO
-
-SELECT *
-FROM dbo.PasajesPorPesoExtra( 15 ) AS pasajeros
+FROM dbo.PasajesPorPesoExtra( 20 ) AS pasajeros
 ORDER BY pasajeros.peso_equipaje_extra
 GO
 
 -- =============================================
--- Nombre de Funcion: ApellidoPasajero
+-- Nombre de Funcion: CostoPasaje
 -- Descripción: 
 --	 Calcula el costo total de los pasajes.
 -- Parametros:
---   @apellido NVARCHAR(100) - apellido del pasajero
 -- Retorno:
---   Pasajes y su costo total
+--   Pasajes, su costo total y nombre completo del pasajero
 -- =============================================
+CREATE FUNCTION CostoPasaje
+(
+)
+RETURNS TABLE
+AS
+RETURN
+(
+SELECT pv.id_pasaje,
+	   SUM( c.tarifa_por_km*v.distancia_km+c.tarifa_base ) AS [Costo Total],
+	   CONCAT( p.apellido, ', ', p.nombre ) AS [Nombre completo de pasajero]
+FROM pasaje_vuelo pv
+INNER JOIN Asiento a
+	ON pv.id_avion=a.id_avion
+	   AND pv.nro_asiento=a.nro_asiento
+INNER JOIN Clase c
+	ON a.id_clase=c.id_clase
+INNER JOIN Vuelo v
+	ON pv.id_vuelo=v.id_vuelo
+INNER JOIN Pasaje p1
+	ON pv.id_pasaje=p1.id_pasaje
+INNER JOIN Pasajero p
+	ON p1.id_pasajero=p.id_pasajero
+GROUP BY pv.id_pasaje,
+		 CONCAT( p.apellido, ', ', p.nombre )
+)
+GO
+
+
+SELECT *
+FROM dbo.CostoPasaje( ) AS Pasajes_costo
+ORDER BY [Costo Total]
+GO
+
+/*5)Compararcion de eficiencia*/
+SET STATISTICS TIME ON;
+SET STATISTICS IO ON;
+
+--Operacion sin funcion
+SELECT *
+FROM pasajero p
+WHERE p.apellido LIKE 'C%'
+
+--Usando funcon
+SELECT *
+FROM dbo.ApellidoPasajero( 'C%' )
+GO
+
+--Operacion sin procedimiento
+INSERT INTO Aerolinea(id_aerolinea, nombre)
+VALUES(75, 'KLM Royal Dutch Airlines');
+
+--Usando procedimiento
+EXEC InsertIntoAerolinea
+	 @Id=76,
+	 @nombre='Azul Brazilian';
+GO
+
+SET STATISTICS TIME OFF;
+SET STATISTICS IO OFF;

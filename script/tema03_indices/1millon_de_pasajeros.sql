@@ -93,8 +93,8 @@ CREATE CLUSTERED INDEX IDX_FechaNacimiento_Pasajero ON [Pasajero](fechanac);
 ALTER TABLE [Pasajero] ADD CONSTRAINT PK_Pasajero PRIMARY KEY NONCLUSTERED (id_pasajero);
 
 ALTER TABLE [Pasaje]
-DROP CONSTRAINT FK_pasaje_pasajero
-FOREIGN KEY (id_pasajero) REFERENCES [Pasajero](id_pasajero),
+ADD CONSTRAINT FK_pasaje_pasajero
+FOREIGN KEY (id_pasajero) REFERENCES [Pasajero](id_pasajero)
 
 -- Repetimos la consulta
 SET STATISTICS TIME ON;
@@ -128,6 +128,13 @@ DROP CONSTRAINT PK_Pasajero;
 -- Creamos un índice no agrupado que incluya todas las columnas de la tabla pasajero.
 CREATE NONCLUSTERED INDEX IDX_ColumnasSeleccionadas_Pasajero 
 ON [Pasajero](fechanac, nombre, apellido, dni_pasajero, email, telefono);
+
+-- Creamos nuevamente las claves eliminadas.
+ALTER TABLE [Pasajero] ADD CONSTRAINT PK_Pasajero PRIMARY KEY NONCLUSTERED (id_pasajero);
+
+ALTER TABLE [Pasaje]
+ADD CONSTRAINT FK_pasaje_pasajero
+FOREIGN KEY (id_pasajero) REFERENCES [Pasajero](id_pasajero)
 
 -- Repetimos la consulta
 SET STATISTICS TIME ON;
