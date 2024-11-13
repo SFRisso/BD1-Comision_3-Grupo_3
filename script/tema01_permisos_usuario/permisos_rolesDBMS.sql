@@ -3,10 +3,10 @@ GO
 
 -- Crear los logins en el servidor si no existen
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioLecturaLogin')
-    CREATE LOGIN usuarioLecturaLogin WITH PASSWORD = 'PasswordLectura123!';
+    CREATE LOGIN usuarioLecturaLogin WITH PASSWORD = 'grupo3Lectura123!';
 
 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioSinAccesoLogin')
-    CREATE LOGIN usuarioSinAccesoLogin WITH PASSWORD = 'PasswordSinAcceso123!';
+    CREATE LOGIN usuarioSinAccesoLogin WITH PASSWORD = 'grupo3SinAcceso123!';
 
 -- Crear los usuarios en la base de datos y asociarlos con los logins
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'usuarioLectura')
@@ -49,7 +49,7 @@ BEGIN TRY
     REVERT;
 END TRY
 BEGIN CATCH
-    PRINT ' usuarioSinAcceso: Este usuario no tiene asignado el rol RolSoloLectura ni permisos directos en la tabla Pasajero, por lo que no pudo realizar la consulta y se generó un error de permisos.';
+    PRINT ' usuarioSinAcceso: Este usuario no tiene asignado el rol RolSoloLectura ni permisos directos en la tabla Pasajero, por lo que no pudo realizar la consulta y se generÃ³ un error de permisos.';
     PRINT 'Detalles del error: ' + ERROR_MESSAGE();
     REVERT;
 END CATCH;
