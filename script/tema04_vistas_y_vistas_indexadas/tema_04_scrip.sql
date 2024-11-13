@@ -12,7 +12,7 @@ select *  from Pasajero
 
 go
 
--- Informacíon que se podría considerar sensible: email, telefono, fechanac, dni_pasajero
+-- InformacÃ­on que se podrÃ­a considerar sensible: email, telefono, fechanac, dni_pasajero
 
 create view pasajero_vista -- creamos una vista llamada pasajero_vista
 as
@@ -42,13 +42,13 @@ Entra en conflicto con los campos obligatorios y claves foraneas*/
 -- 3) realizar update sobre algunos de los registros creados y volder a a verificar el resultado en la tabla
 
 select * from Pasajero --
-update pasajero_vista set nombre = 'F67C3A1D'
+update pasajero_vista set nombre = 'F67C3A1D', apellido = '08BAFE3D-C'
 where id_pasajero = 1;
 
 go
 
 /*Verfico resultado*/
-select * from pasajero_vista where id_pasajero = 1;
+select * from pasajero_vista where id_pasajero = 15;
 
 /*
 id_pasajero  nombre     apellido	
@@ -63,7 +63,7 @@ go
 -- 5) Crear un indice sobre de las columnas sobre la vista recien creada.
 -- Para crear un indice, debemos volver a crear las vista ultilizando WITH SCHEMABINDING.
 	
-create view pasajero_vista WITH SCHEMABINDING --esquema fijo, se trata de una opción en SQL que vincula una vista o una funcion definida
+create view pasajero_vista_indexada WITH SCHEMABINDING --esquema fijo, se trata de una opciÃ³n en SQL que vincula una vista o una funcion definida
 					   --por el usuario al esquema de las tablas subyacentes, evitando que las tablas incluidad en la vista o funcion sean modificadas
 					   --de manera que rompa la estructura de la vista.
 as
@@ -74,7 +74,7 @@ from dbo.Pasajero;
    Convitiendo la vista en una vista indexada*/
 
    create unique clustered index idx_pasajero_vista_id_pasajero
-   on pasajero_vista(id_pasajero);
+   on pasajero_vista_indexada(id_pasajero);
 
 
 
