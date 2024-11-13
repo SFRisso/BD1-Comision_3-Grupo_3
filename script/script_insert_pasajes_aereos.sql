@@ -872,7 +872,7 @@ VALUES(9, 20.61, 105);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(10, 9.81, 65);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
-VALUES(11, 24.79, 115);
+VALUES(11, NULL, 115);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(12, 29.9, 77);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
@@ -894,7 +894,7 @@ VALUES(20, 3.62, 28);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(21, 19.18, 17);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
-VALUES(22, 2.38, 30);
+VALUES(22, NULL, 30);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(23, 18.84, 63);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
@@ -906,7 +906,7 @@ VALUES(26, 14.59, 18);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(27, 11.94, 113);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
-VALUES(28, 21.84, 101);
+VALUES(28, NULL, 101);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(29, 9.96, 89);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
@@ -976,7 +976,7 @@ VALUES(61, 11.91, 113);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(62, 8.22, 64);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
-VALUES(63, 21.25, 93);
+VALUES(63, NULL, 93);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
 VALUES(64, 29.37, 51);
 INSERT INTO Pasaje(id_pasaje, peso_equipaje_extra, id_pasajero)
