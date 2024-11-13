@@ -198,7 +198,8 @@ Para iniciar el desarrollo del proyecto, en primer lugar, se organiza una reuni�
 
 Con la idea definida, comenzamos por elaborar el diagrama entidad-relación y su diccionario de datos para, posteriormente, avanzar con el modelo físico y el lote de datos con los que trabajaríamos.
 
-En la segunda parte del proyecto, distribuimos los temas de investigación entre los miembros del equipo a través de un sorteo, quedando asignados de la siguiente manera:
+En la segunda parte del proyecto, distribuimos los temas de investigación entre los miembros del equipo a través de un sorteo. Realizamos reuniones periodicas para coordinar sobre el avanze realizado.
+
 
  **b) Herramientas (Instrumentos y procedimientos)**
  - [DB designer](https://www.dbdesigner.net/)
