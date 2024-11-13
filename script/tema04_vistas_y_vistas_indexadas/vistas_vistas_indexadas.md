@@ -5,7 +5,7 @@ Tema: Vistas y Vistas indexadas
 select *  from Pasajero
 
 
--- 2) Informacíon que se podría considerar sensible: email, telefono, fechanac, dni_pasajero
+2) Informacíon que se podría considerar sensible: email, telefono, fechanac, dni_pasajero
 
 create view pasajero_vista -- creamos una vista llamada pasajero_vista
 as
