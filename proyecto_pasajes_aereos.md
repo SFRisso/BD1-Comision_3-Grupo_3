@@ -239,9 +239,9 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Carga de 1 millón de registro: [1millon_de_pasajeros.sql](script/tema03_indices/1millon_de_pasajeros.sql)
 
 ## Desarrollo TEMA 4 - Vistas y vistas indexadas
-> Script: [(script/tema04_vistas_y_vistas_indexadas/tema_04_scrip.sql)]
+> Script: [tema04_scrip.sql](script/tema04_vistas_y_vistas_indexadas/tema_04_scrip.sql)
 
-> Documentación: [(script/tema04_vistas_y_vistas_indexadas/vistas_vistas_indexadas.md)]
+> Documentación: [vistas_vistas_indexadas](script/tema04_vistas_y_vistas_indexadas/vistas_vistas_indexadas.md).
 
 # CAPÍTULO V: CONCLUSIONES
 Tema 1: Manejo de permisos a nivel de usuarios de base de datos.
@@ -253,6 +253,10 @@ La implementación de índices, tanto agrupados como no agrupados, nos muestra q
 
 Las pruebas indican una la reducción en el tiempo de ejecución y en las lecturas lógicas considerable, lo que resulta en una mejora en la eficiencia general del sistema. 
 Por lo tanto, es muy recomendable el uso de índices en bases de datos, para optimizar el acceso a los datos y mejorar la experiencia del usuario en aplicaciones que dependen de consultas rápidas.
+
+Tema 4: Vistas y Vistas indexadas.
+
+Las vistas indexadas son una increíble herramienta en entornos o tablas con gran cantidad de lectura y pocas modificaciones pero si no es así nos pueden hacer mucho daño al servidor. Su uso puede ser una buena técnica para mejorar el rendimiento de las consultas al reducir el costo de E/S y la duración de las consultas, pero requiere pruebas, planificación y un estudio pormenorizado de donde usar vistas indexadas. Para ello se debe realizar un análisis completo del impacto en el rendimiento, midiendo las mejoras en el rendimiento de lecturas frente al coste en las escrituras
 
 # BIBLIOGRAFÍA DE CONSULTA
 
