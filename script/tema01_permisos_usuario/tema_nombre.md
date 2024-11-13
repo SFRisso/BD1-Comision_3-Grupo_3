@@ -148,3 +148,105 @@ REVERT;
 ```
 Conclusión
 Este script demuestra cómo configurar permisos de manera diferenciada en SQL Server y validar su efecto. El usuario usuarioAdminDB puede realizar inserciones directas, usuarioLecturaDB puede realizar inserciones solo a través del procedimiento InsertarPasaje, y usuarioSinPermisosDB no puede realizar inserciones. Esto ilustra el control de acceso granular a nivel de usuarios y roles en SQL Server.
+
+# Script SQL para Configuración de Usuarios, Roles y Permisos de Lectura en la Tabla `Pasajero`
+
+Este script configura usuarios y roles en la base de datos `Pasajes_Aereos`, define permisos de solo lectura en la tabla `Pasajero` y realiza pruebas de acceso con dos usuarios distintos.
+
+## Descripción del Script
+
+1. **Selección de la Base de Datos**  
+   El script comienza seleccionando la base de datos `Pasajes_Aereos`.
+
+   ```sql
+   USE Pasajes_Aereos;
+   GO
+Creación de Logins en el Servidor
+Si no existen, se crean dos logins a nivel de servidor:
+
+usuarioLecturaLogin: un login para el usuario con permisos de solo lectura.
+usuarioSinAccesoLogin: un login para el usuario sin permisos de acceso.
+```
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioLecturaLogin')
+    CREATE LOGIN usuarioLecturaLogin WITH PASSWORD = 'PasswordLectura123!';
+
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'usuarioSinAccesoLogin')
+    CREATE LOGIN usuarioSinAccesoLogin WITH PASSWORD = 'PasswordSinAcceso123!';
+```
+Creación de Usuarios en la Base de Datos
+Se crean usuarios de base de datos asociados a los logins creados previamente:
+
+usuarioLectura: usuario con permisos de lectura.
+usuarioSinAcceso: usuario sin permisos específicos.
+```
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'usuarioLectura')
+    CREATE USER usuarioLectura FOR LOGIN usuarioLecturaLogin;
+
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'usuarioSinAcceso')
+    CREATE USER usuarioSinAcceso FOR LOGIN usuarioSinAccesoLogin;
+```
+Creación de un Rol de Solo Lectura
+Si no existe, se crea un rol llamado RolSoloLectura, diseñado para otorgar permisos de lectura en la tabla Pasajero.
+
+```
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'RolSoloLectura')
+    CREATE ROLE RolSoloLectura;
+```
+Otorgar Permiso de Lectura al Rol
+Se concede al rol RolSoloLectura el permiso SELECT sobre la tabla Pasajero.
+
+```
+GRANT SELECT ON Pasajero TO RolSoloLectura;
+```
+Asignación del Usuario al Rol de Solo Lectura
+El usuario usuarioLectura se agrega como miembro del rol RolSoloLectura, lo que le permite realizar consultas en la tabla Pasajero.
+
+```
+ALTER ROLE RolSoloLectura ADD MEMBER usuarioLectura;
+```
+Pruebas de Acceso
+
+Prueba de Consulta con usuarioLectura
+Se prueba el acceso a la tabla Pasajero con el usuario usuarioLectura, que tiene el rol RolSoloLectura. Si la consulta es exitosa, se imprime un mensaje indicando que el usuario pudo realizar la consulta. Si ocurre un error, se imprime un mensaje de error.
+
+```
+BEGIN TRY
+    EXECUTE AS USER = 'usuarioLectura';
+    SELECT * FROM Pasajero;
+    PRINT 'usuarioLectura: Consulta realizada exitosamente.';
+    PRINT 'usuarioLectura: Este usuario pudo realizar la consulta en la tabla Pasajero exitosamente, ya que tiene asignado el rol RolSoloLectura, que le otorga permiso de SELECT en dicha tabla.';
+    REVERT;
+END TRY
+BEGIN CATCH
+    PRINT 'usuarioLectura: Error en la consulta.';
+    PRINT 'Detalles del error: ' + ERROR_MESSAGE();
+    REVERT;
+END CATCH;
+GO
+```
+Prueba de Consulta con usuarioSinAcceso
+Se prueba el acceso a la tabla Pasajero con el usuario usuarioSinAcceso, que no tiene permisos de lectura. Se espera un error de permisos, y si ocurre, se imprime un mensaje explicando que el usuario no tiene el rol adecuado para acceder a la tabla.
+
+```
+BEGIN TRY
+    EXECUTE AS USER = 'usuarioSinAcceso';
+    SELECT * FROM Pasajero;
+    PRINT 'usuarioSinAcceso: Consulta realizada exitosamente.';
+    REVERT;
+END TRY
+BEGIN CATCH
+    PRINT ' usuarioSinAcceso: Este usuario no tiene asignado el rol RolSoloLectura ni permisos directos en la tabla Pasajero, por lo que no pudo realizar la consulta y se generó un error de permisos.';
+    PRINT 'Detalles del error: ' + ERROR_MESSAGE();
+    REVERT;
+END CATCH;
+GO
+```
+Este script implementa un rol de solo lectura y verifica el acceso de los usuarios usuarioLectura (que tiene el rol) y usuarioSinAcceso (que no tiene permisos). usuarioLectura puede realizar consultas en la tabla Pasajero gracias a su rol, mientras que usuarioSinAcceso no tiene acceso, lo que demuestra la configuración efectiva de permisos en la base de datos.
+
+
+
+
+
+
+
+
