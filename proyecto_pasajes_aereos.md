@@ -226,6 +226,9 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Acceder a la siguiente carpeta  [scripts->script_insert_pasajes_aereos.sql](script/script_insert_pasajes_aereos.sql)
 
 ## Desarrollo TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos
+> Documentación del script: [permisos_usuarios.md](script/tema01_permisos_usuario/permisos_usuarios.md)
+
+> Script: [tema01_permisos_usuarios_script.sql](script/tema01_permisos_usuario/tema01_permisos_usuarios_script.sql)
 
 ## Desarrollo TEMA 2 - Procedimientos y funciones almacenadas
 > Documentación del script: [procedimientos_funciones_almacenadas.md](script/tema02_procedimientos_funciones/procedimientos_funciones.md)
@@ -238,6 +241,8 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 ## Desarrollo TEMA 4 - Vistas y vistas indexadas
 > Script [https://github.com/SFRisso/BD1-Comision_3-Grupo_3/blob/main/script/tema04_vistas_y_vistas_indexadas/tema_04_scrip.sql]
 # CAPÍTULO V: CONCLUSIONES
+Tema 1: Manejo de permisos a nivel de usuarios de base de datos.
+el manejo adecuado de permisos a nivel de usuarios en bases de datos es un pilar fundamental para garantizar la seguridad, integridad y eficiencia en el acceso y manipulación de los datos. La correcta asignación de permisos, el uso de roles y la implementación de procedimientos almacenados controlados son estrategias eficaces para mantener un entorno de base de datos seguro y bien administrado.
 
 Tema 3: Optimización de consultas a través de índices
 
