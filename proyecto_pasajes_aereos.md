@@ -239,7 +239,7 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 > Carga de 1 millón de registro: [1millon_de_pasajeros.sql](script/tema03_indices/1millon_de_pasajeros.sql)
 
 ## Desarrollo TEMA 4 - Vistas y vistas indexadas
-> Script: [tema04_vistas_y_vistas_indexadas/tema_04_scrip.sql]
+> Script: [script/tema04_vistas_y_vistas_indexadas/tema_04_scrip.sql]
 > 
 # CAPÍTULO V: CONCLUSIONES
 Tema 1: Manejo de permisos a nivel de usuarios de base de datos.
