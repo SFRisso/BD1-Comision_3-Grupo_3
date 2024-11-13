@@ -227,8 +227,8 @@ Acceso al documento [PDF](doc/diccionario_datos_pasajes_aereos.pdf) del dicciona
 
 ## Desarrollo TEMA 1 - Manejo de permisos a nivel de usuarios de base de datos
 > Documentación del script: [permisos_usuarios.md](script/tema01_permisos_usuario/permisos_usuarios.md)
-> 
-> Script: [tema01_permisos_usuarios_script.sql](script/tema01_permisos_usuario/tema01_permisos_usuarios_script.sql)
+
+> > Script: [tema01_permisos_usuarios_script.sql](script/tema01_permisos_usuario/tema01_permisos_usuarios_script.sql)
 > > Script: [permisos_rolesDBMS.sql](script/tema01_permisos_usuario/permisos_rolesDBMS.sql)
 
 ## Desarrollo TEMA 2 - Procedimientos y funciones almacenadas
