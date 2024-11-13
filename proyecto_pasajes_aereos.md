@@ -255,6 +255,7 @@ Las pruebas indican una la reducción en el tiempo de ejecución y en las lectur
 Por lo tanto, es muy recomendable el uso de índices en bases de datos, para optimizar el acceso a los datos y mejorar la experiencia del usuario en aplicaciones que dependen de consultas rápidas.
 
 Tema 4: Vistas y Vistas indexadas.
+Las vistas suelen usarse para centrar, simplificar y personalizar la percepción de la base de datos para cada usuario, es decir, pueden emplearse como mecanismos de seguridad, que permiten a los usuarios obtener acceso a los datos por medio de la vista, pero no les conceden el permiso de obtener acceso directo a las tablas subyacentes de la consulta. Tambien se utilizan para proporcionar una interfaz compatible con versiones anteriores con el fin de emular una tabla que existía pero cuyo esquema ha cambiado.
 
 Las vistas indexadas son una increíble herramienta en entornos o tablas con gran cantidad de lectura y pocas modificaciones pero si no es así nos pueden hacer mucho daño al servidor. Su uso puede ser una buena técnica para mejorar el rendimiento de las consultas al reducir el costo de E/S y la duración de las consultas, pero requiere pruebas, planificación y un estudio pormenorizado de donde usar vistas indexadas. Para ello se debe realizar un análisis completo del impacto en el rendimiento, midiendo las mejoras en el rendimiento de lecturas frente al coste en las escrituras
 
